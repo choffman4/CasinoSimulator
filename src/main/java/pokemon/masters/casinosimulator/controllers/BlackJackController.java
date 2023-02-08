@@ -1,14 +1,11 @@
-package pokemon.masters.casinosimulator;
+package pokemon.masters.casinosimulator.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
-public class ChooseGameController {
-
+public class BlackJackController {
     //This function initialize runs whenever the scene loads
     @FXML
     protected void initialize() {
@@ -18,10 +15,6 @@ public class ChooseGameController {
     //This button goes back a page to game selection
     @FXML
     protected void onBackPage(MouseEvent event) throws IOException {
-        ChangeScene.changeScene(event, "mainMenuView.fxml");
-    }
-    @FXML
-    protected void onSlotMachine(MouseEvent event) throws IOException {
-        ChangeScene.changeScene(event, "slotMachineView.fxml");
+        ChangeScene.changeScene(event, "chooseGameView.fxml");
     }
 }

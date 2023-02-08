@@ -1,4 +1,4 @@
-package pokemon.masters.casinosimulator;
+package pokemon.masters.casinosimulator.games;
 
 public class Player {
     private String name;

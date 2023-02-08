@@ -1,11 +1,12 @@
-package pokemon.masters.casinosimulator;
+package pokemon.masters.casinosimulator.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 
-public class FiveCardController {
+public class ChooseGameController {
+
     //This function initialize runs whenever the scene loads
     @FXML
     protected void initialize() {
@@ -15,6 +16,10 @@ public class FiveCardController {
     //This button goes back a page to game selection
     @FXML
     protected void onBackPage(MouseEvent event) throws IOException {
-        ChangeScene.changeScene(event, "chooseGameView.fxml");
+        ChangeScene.changeScene(event, "mainMenuView.fxml");
+    }
+    @FXML
+    protected void onSlotMachine(MouseEvent event) throws IOException {
+        ChangeScene.changeScene(event, "slotMachineView.fxml");
     }
 }

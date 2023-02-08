@@ -1,8 +1,9 @@
-package pokemon.masters.casinosimulator;
+package pokemon.masters.casinosimulator.controllers;
 
 
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+
 import java.io.IOException;
 
 public class SlotMachineController {
