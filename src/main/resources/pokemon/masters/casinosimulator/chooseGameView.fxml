@@ -6,75 +6,72 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
-      prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="pokemon.masters.casinosimulator.ChooseGameController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokemon.masters.casinosimulator.ChooseGameController">
 
    <children>
       <ImageView fitHeight="650.0" fitWidth="1050.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/GenericFeltMat.jpeg" />
+            <Image url="@../../../CasinoAssets/OverallUI/GenericFeltMat.jpeg" />
          </image>
       </ImageView>
       <ImageView fx:id="btnBlackJack" fitHeight="132.0" fitWidth="214.0" layoutX="720.0" layoutY="106.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/BlackjackIcon.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/BlackjackIcon.png" />
          </image>
       </ImageView>
       <ImageView fx:id="btnRoulette" fitHeight="125.0" fitWidth="207.0" layoutX="132.0" layoutY="120.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/RouletteIcon.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/RouletteIcon.png" />
          </image>
       </ImageView>
       <ImageView fx:id="btnSlots" fitHeight="132.0" fitWidth="225.0" layoutX="635.0" layoutY="340.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/SlotMachineIcon.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/SlotMachineIcon.png" />
          </image>
       </ImageView>
       <ImageView fx:id="btnCraps" fitHeight="138.0" fitWidth="214.0" layoutX="246.0" layoutY="337.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/CrapsIcon.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/CrapsIcon.png" />
          </image>
       </ImageView>
       <ImageView fx:id="btnPoker" fitHeight="125.0" fitWidth="214.0" layoutX="436.0" layoutY="120.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/PokerIcon.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/PokerIcon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="117.0" fitWidth="272.0" layoutX="217.0" layoutY="361.0" rotate="16.4">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/ComingSoonStamp.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/ComingSoonStamp.png" />
          </image>
       </ImageView>
       <ImageView fx:id="btnBank" fitHeight="56.0" fitWidth="172.0" layoutX="834.0" layoutY="549.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/ButtonUp.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
          </image>
       </ImageView>
       <ImageView fx:id="btnBack" fitHeight="56.0" fitWidth="172.0" layoutX="46.0" layoutY="549.0">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/ButtonUp.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="117.0" fitWidth="272.0" layoutX="611.0" layoutY="361.0" rotate="21.8">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/ComingSoonStamp.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/ComingSoonStamp.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="117.0" fitWidth="272.0" layoutX="100.0" layoutY="114.0" rotate="29.7">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/ComingSoonStamp.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/ComingSoonStamp.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="117.0" fitWidth="272.0" layoutX="400.0" layoutY="124.0" rotate="32.7">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/ComingSoonStamp.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/ComingSoonStamp.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="117.0" fitWidth="272.0" layoutX="671.0" layoutY="114.0" rotate="33.7">
          <image>
-            <Image url="@../src/main/resources/CasinoAssets/OverallUI/ComingSoonStamp.png" />
+            <Image url="@../../../CasinoAssets/OverallUI/ComingSoonStamp.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="298.0" layoutY="596.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BANK:" wrappingWidth="183.4700927734375">
