@@ -20,6 +20,17 @@ public class BlackJackController {
     }
 
     @FXML
+    void onStand(MouseEvent event) {
+
+    }
+
+
+    @FXML
+    void onDeal(MouseEvent event) {
+
+    }
+
+    @FXML
     void betFifty(MouseEvent event) {
 
     }
