@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1050.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/GenericFeltMat.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnBack" fitHeight="56.0" fitWidth="172.0" layoutX="39.0" layoutY="574.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtBack" layoutX="53.0" layoutY="613.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="144.00000000000006">
+         <font>
+            <Font name="Arial Black" size="42.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="btnSpin" fitHeight="56.0" fitWidth="172.0" layoutX="852.0" layoutY="572.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtSpin" layoutX="872.0" layoutY="612.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SPIN" textAlignment="CENTER" wrappingWidth="132.13671112060547">
+         <font>
+            <Font name="Arial Black" size="42.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="imgChip1" fitHeight="63.0" fitWidth="58.0" layoutX="227.0" layoutY="570.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip5" fitHeight="63.0" fitWidth="58.0" layoutX="295.0" layoutY="571.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip10" fitHeight="63.0" fitWidth="58.0" layoutX="365.0" layoutY="570.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip10.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip20" fitHeight="63.0" fitWidth="58.0" layoutX="436.0" layoutY="570.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip20.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip50" fitHeight="63.0" fitWidth="58.0" layoutX="506.0" layoutY="571.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip50.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip100" fitHeight="63.0" fitWidth="58.0" layoutX="576.0" layoutY="570.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip100.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip500" fitHeight="63.0" fitWidth="58.0" layoutX="644.0" layoutY="570.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip500.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip1K" fitHeight="63.0" fitWidth="58.0" layoutX="713.0" layoutY="571.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip1000.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip5K" fitHeight="63.0" fitWidth="58.0" layoutX="782.0" layoutY="571.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip5000.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker" layoutX="380.0" layoutY="519.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="144.0" layoutX="27.0" layoutY="21.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/RouletteIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnRules" fitHeight="32.0" fitWidth="100.0" layoutX="88.0" layoutY="87.0">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtRules" layoutX="96.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RULES" textAlignment="CENTER" wrappingWidth="84.66665649414074">
+         <font>
+            <Font name="Arial Black" size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="txtChipsAmount" fill="WHITE" layoutX="839.0" layoutY="549.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0" textAlignment="RIGHT" wrappingWidth="192.13671112060547">
+         <font>
+            <Font name="Arial Black" size="33.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="905.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHIPS:" textAlignment="CENTER" wrappingWidth="132.13671112060547">
+         <font>
+            <Font name="Arial Black" size="30.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="200.0" fitWidth="199.0" layoutX="24.0" layoutY="159.0">
+         <image>
+            <Image url="@../../../CasinoAssets/Roulette/RouletteWheel_SingleZero.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="355.0" fitWidth="816.0" layoutX="211.0" layoutY="65.0">
+         <image>
+            <Image url="@../../../CasinoAssets/Roulette/Roulette_SingleZero.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgContainer" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</Pane>
