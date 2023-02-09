@@ -210,5 +210,9 @@
             <Font name="Arial Black" size="42.0" />
          </font>
       </Text>
+      <ImageView fx:id="imgBetContainer" fitHeight="125.0" fitWidth="388.0" layoutX="331.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerSlot1" fitHeight="182.0" fitWidth="117.0" layoutX="325.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerSlot2" fitHeight="182.0" fitWidth="117.0" layoutX="473.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerSlot3" fitHeight="182.0" fitWidth="117.0" layoutX="624.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>

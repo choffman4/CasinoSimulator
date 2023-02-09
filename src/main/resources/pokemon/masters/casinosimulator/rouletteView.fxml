@@ -119,6 +119,6 @@
             <Image url="@../../../CasinoAssets/Roulette/Roulette_SingleZero.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgContainer" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgNumberContainer" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>
