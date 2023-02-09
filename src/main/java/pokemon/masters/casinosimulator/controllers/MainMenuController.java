@@ -6,8 +6,8 @@ import pokemon.masters.casinosimulator.services.ChangeScene;
 
 import java.io.IOException;
 
-public class RouletteController {
-    //This function initialize runs whenever the scene loads
+public class MainMenuController {
+
     @FXML
     protected void initialize() {
         System.out.println("Hello World");
@@ -16,6 +16,10 @@ public class RouletteController {
     //This button goes back a page to game selection
     @FXML
     protected void onBackPage(MouseEvent event) throws IOException {
-        ChangeScene.changeScene(event, "chooseGameView.fxml");
+        ChangeScene.changeScene(event, "mainMenuView.fxml");
+    }
+    @FXML
+    protected void onSlotMachine(MouseEvent event) throws IOException {
+        ChangeScene.changeScene(event, "slotMachineView.fxml");
     }
 }

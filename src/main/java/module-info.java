@@ -1,4 +1,4 @@
-module pokemon.masters.casinosimulator {
+module pokemon.masters.casinosimulator2 {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -9,4 +9,6 @@ module pokemon.masters.casinosimulator {
     opens pokemon.masters.casinosimulator.controllers to javafx.fxml;
     exports pokemon.masters.casinosimulator.gamelogic;
     opens pokemon.masters.casinosimulator.gamelogic to javafx.fxml;
+    exports pokemon.masters.casinosimulator.services;
+    opens pokemon.masters.casinosimulator.services to javafx.fxml;
 }

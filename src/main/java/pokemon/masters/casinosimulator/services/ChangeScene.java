@@ -1,4 +1,4 @@
-package pokemon.masters.casinosimulator.controllers;
+package pokemon.masters.casinosimulator.services;
 
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;

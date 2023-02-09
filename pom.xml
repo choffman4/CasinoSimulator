@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                pokemon.masters.casinosimulator/pokemon.masters.casinosimulator.controllers.HelloApplication
+                                controllers.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

@@ -2,6 +2,7 @@ package pokemon.masters.casinosimulator.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import pokemon.masters.casinosimulator.services.ChangeScene;
 
 import java.io.IOException;
 

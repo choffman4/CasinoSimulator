@@ -1,4 +1,4 @@
-package pokemon.masters.casinosimulator.controllers;
+package pokemon.masters.casinosimulator;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +10,9 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        //First window to open when program is launched is "chooseGameView.fxml"
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("chooseGameView.fxml"));
+        //First window to open when program is launched is "mainMenuView.fxml"
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class
+                .getResource("mainMenuView.fxml"));
         //Default Window size for application (1050 W, 650 H)
         Scene scene = new Scene(fxmlLoader.load(), 1050, 650);
         stage.setTitle("Casino Simulator Menu");
