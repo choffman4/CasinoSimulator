@@ -137,77 +137,77 @@
       </ImageView>
       <Text fill="WHITE" layoutX="86.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 1000:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 100:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 50:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 20:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 10:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 5:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 3:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 2:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="86.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 1:1" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="29.0" />
+            <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
       <Text fx:id="txtSpin" layoutX="867.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SPIN" textAlignment="CENTER" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="42.0" />
+            <Font name="ChunkFiveEx" size="42.0" />
          </font>
       </Text>
       <Text fx:id="txtBack" layoutX="43.0" layoutY="603.0" onMouseClicked="#onBackPage" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="144.00000000000006">
          <font>
-            <Font name="Arial Black" size="42.0" />
+            <Font name="ChunkFiveEx" size="42.0" />
          </font>
       </Text>
       <Text fx:id="txtChipsAmount" fill="WHITE" layoutX="837.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0" textAlignment="RIGHT" wrappingWidth="192.13671112060547">
          <font>
-            <Font name="Arial Black" size="33.0" />
+            <Font name="ChunkFiveEx" size="33.0" />
          </font>
       </Text>
       <Text fill="WHITE" layoutX="903.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHIPS:" textAlignment="CENTER" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="30.0" />
+            <Font name="ChunkFiveEx" size="30.0" />
          </font>
       </Text>
       <Text fx:id="txtRules" layoutX="94.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RULES" textAlignment="CENTER" wrappingWidth="84.66665649414074">
          <font>
-            <Font name="Arial Black" size="20.0" />
+            <Font name="ChunkFiveEx" size="20.0" />
          </font>
       </Text>
       <Text fx:id="txtBet" fill="WHITE" layoutX="458.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BET:" textAlignment="CENTER" wrappingWidth="132.13671112060547">
          <font>
-            <Font name="Arial Black" size="42.0" />
+            <Font name="ChunkFiveEx" size="42.0" />
          </font>
       </Text>
       <ImageView fx:id="imgBetContainer" fitHeight="125.0" fitWidth="388.0" layoutX="331.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
