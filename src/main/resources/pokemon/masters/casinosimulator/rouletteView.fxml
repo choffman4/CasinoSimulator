@@ -120,5 +120,53 @@
          </image>
       </ImageView>
       <ImageView fx:id="imgNumberContainer" fitHeight="150.0" fitWidth="200.0" layoutX="38.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed3" fitHeight="69.0" fitWidth="46.0" layoutX="298.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack6" fitHeight="69.0" fitWidth="46.0" layoutX="353.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed9" fitHeight="69.0" fitWidth="46.0" layoutX="409.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed12" fitHeight="69.0" fitWidth="46.0" layoutX="471.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack15" fitHeight="69.0" fitWidth="46.0" layoutX="525.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed18" fitHeight="69.0" fitWidth="46.0" layoutX="582.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed21" fitHeight="69.0" fitWidth="46.0" layoutX="634.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed27" fitHeight="69.0" fitWidth="46.0" layoutX="748.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed30" fitHeight="69.0" fitWidth="46.0" layoutX="806.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed36" fitHeight="69.0" fitWidth="46.0" layoutX="915.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed5" fitHeight="69.0" fitWidth="46.0" layoutX="357.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed14" fitHeight="69.0" fitWidth="46.0" layoutX="525.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed23" fitHeight="69.0" fitWidth="46.0" layoutX="690.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed32" fitHeight="69.0" fitWidth="46.0" layoutX="859.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed1" fitHeight="69.0" fitWidth="46.0" layoutX="298.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed7" fitHeight="69.0" fitWidth="46.0" layoutX="413.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed16" fitHeight="69.0" fitWidth="46.0" layoutX="582.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed19" fitHeight="69.0" fitWidth="46.0" layoutX="634.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed25" fitHeight="69.0" fitWidth="46.0" layoutX="748.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRed34" fitHeight="69.0" fitWidth="46.0" layoutX="915.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerRedDiamond" fitHeight="47.0" fitWidth="72.0" layoutX="538.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack24" fitHeight="69.0" fitWidth="46.0" layoutX="690.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack33" fitHeight="69.0" fitWidth="46.0" layoutX="859.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack2" fitHeight="69.0" fitWidth="46.0" layoutX="301.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack8" fitHeight="69.0" fitWidth="46.0" layoutX="413.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack11" fitHeight="69.0" fitWidth="46.0" layoutX="471.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack17" fitHeight="69.0" fitWidth="46.0" layoutX="582.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack20" fitHeight="69.0" fitWidth="46.0" layoutX="634.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack26" fitHeight="69.0" fitWidth="46.0" layoutX="748.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack29" fitHeight="69.0" fitWidth="46.0" layoutX="806.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack35" fitHeight="69.0" fitWidth="46.0" layoutX="915.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack4" fitHeight="69.0" fitWidth="46.0" layoutX="357.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack10" fitHeight="69.0" fitWidth="46.0" layoutX="471.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack13" fitHeight="69.0" fitWidth="46.0" layoutX="525.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack22" fitHeight="69.0" fitWidth="46.0" layoutX="690.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack28" fitHeight="69.0" fitWidth="46.0" layoutX="806.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlack31" fitHeight="69.0" fitWidth="46.0" layoutX="859.0" layoutY="225.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerBlackDiamond" fitHeight="47.0" fitWidth="72.0" layoutX="655.0" layoutY="364.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer1st12" fitHeight="56.0" fitWidth="144.0" layoutX="336.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer2nd12" fitHeight="56.0" fitWidth="144.0" layoutX="556.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer3rd12" fitHeight="56.0" fitWidth="144.0" layoutX="787.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer1to18" fitHeight="56.0" fitWidth="100.0" layoutX="301.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer19to36" fitHeight="56.0" fitWidth="100.0" layoutX="865.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerEVEN" fitHeight="56.0" fitWidth="100.0" layoutX="415.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainerODD" fitHeight="56.0" fitWidth="94.0" layoutX="756.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer2to1bottom" fitHeight="69.0" fitWidth="52.0" layoutX="970.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer2to1middle" fitHeight="69.0" fitWidth="52.0" layoutX="970.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgContainer2to1top" fitHeight="69.0" fitWidth="52.0" layoutX="970.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </Pane>
