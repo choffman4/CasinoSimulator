@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="650.0" fitWidth="1050.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/GenericFeltMat.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="393.0" fitWidth="712.0" layoutX="169.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/CasinoIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnPlay" fitHeight="71.0" fitWidth="256.0" layoutX="397.0" layoutY="464.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnExit" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnMore" fitHeight="150.0" fitWidth="200.0" layoutX="836.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="448.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAY">
+         <font>
+            <Font name="ChunkFiveEx" size="52.0" />
+         </font>
+      </Text>
+      <Text layoutX="67.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXIT">
+         <font>
+            <Font name="ChunkFiveEx" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="859.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MORE...">
+         <font>
+            <Font name="ChunkFiveEx" size="36.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

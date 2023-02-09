@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokemon.masters.casinosimulator.controllers.BlackJackController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="650.0" fitWidth="1050.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/GenericFeltMat.jpeg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="144.0" layoutX="29.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/BlackjackIcon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnRules" fitHeight="32.0" fitWidth="100.0" layoutX="73.0" layoutY="93.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnBack" fitHeight="56.0" fitWidth="172.0" layoutX="29.0" layoutY="564.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnDeal" fitHeight="56.0" fitWidth="172.0" layoutX="847.0" layoutY="564.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip1" fitHeight="63.0" fitWidth="58.0" layoutX="217.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip5" fitHeight="63.0" fitWidth="58.0" layoutX="285.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip5.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip10" fitHeight="63.0" fitWidth="58.0" layoutX="355.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip10.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip20" fitHeight="63.0" fitWidth="58.0" layoutX="426.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip20.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip50" fitHeight="63.0" fitWidth="58.0" layoutX="496.0" layoutY="560.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip50.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip100" fitHeight="63.0" fitWidth="58.0" layoutX="566.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip100.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip500" fitHeight="63.0" fitWidth="58.0" layoutX="634.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip500.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip1k" fitHeight="63.0" fitWidth="58.0" layoutX="703.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip1000.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgChip5k" fitHeight="63.0" fitWidth="58.0" layoutX="772.0" layoutY="561.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/Chip5000.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="526.0" fitWidth="754.0" layoutX="128.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/BlackJack/BlackJackTable.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="58.0" layoutX="476.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/BlackJack/Cards/cardBack_blue4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="58.0" layoutX="778.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/BlackJack/Cards/cardBack_blue4.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="58.0" layoutX="490.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/BlackJack/Cards/cardSpadesJ.png" />
+         </image></ImageView>
+      <ImageView fitHeight="80.0" fitWidth="58.0" layoutX="476.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/BlackJack/Cards/cardHearts10.png" />
+         </image></ImageView>
+      <ImageView fitHeight="80.0" fitWidth="58.0" layoutX="490.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../CasinoAssets/BlackJack/Cards/cardSpades6.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="btnStand" fitHeight="56.0" fitWidth="172.0" layoutX="847.0" layoutY="496.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../CasinoAssets/OverallUI/ButtonUp.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="91.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RULES">
+         <font>
+            <Font name="ChunkFiveEx" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="61.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK">
+         <font>
+            <Font name="ChunkFiveEx" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="882.0" layoutY="601.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEAL">
+         <font>
+            <Font name="ChunkFiveEx" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="897.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHIPS:">
+         <font>
+            <Font name="ChunkFiveEx" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="882.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$10,000">
+         <font>
+            <Font name="ChunkFiveEx" size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="873.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STAND">
+         <font>
+            <Font name="ChunkFiveEx" size="32.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
