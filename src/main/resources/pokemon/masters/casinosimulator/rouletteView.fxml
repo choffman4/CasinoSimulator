@@ -96,7 +96,7 @@
       </ImageView>
       <StackPane fx:id="btnSpin" layoutX="859.0" layoutY="575.0">
          <children>
-            <ImageView fx:id="btnSpin" fitHeight="56.0" fitWidth="172.0" onMouseClicked="#onSpin">
+            <ImageView fx:id="imgSpin" fitHeight="56.0" fitWidth="172.0" onMouseClicked="#onSpin">
                <image>
                   <Image url="@casinoassets/OverallUI/ButtonUp.png" />
                </image>
@@ -111,9 +111,9 @@
             </Text>
          </children>
       </StackPane>
-      <StackPane layoutX="24.0" layoutY="575.0" onMouseClicked="#onBackPage">
+      <StackPane fx:id="btnBack" layoutX="24.0" layoutY="575.0" onMouseClicked="#onBackPage">
          <children>
-            <ImageView fx:id="btnBack" fitHeight="56.0" fitWidth="172.0">
+            <ImageView fx:id="imgBack" fitHeight="56.0" fitWidth="172.0">
                <image>
                   <Image url="@casinoassets/OverallUI/ButtonUp.png" />
                </image>
@@ -143,34 +143,34 @@
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgArrowMarker30" layoutX="521.0" layoutY="519.0">
+      <ImageView fx:id="imgArrowMarker50" layoutX="521.0" layoutY="519.0">
          <image>
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgArrowMarker5" layoutX="591.0" layoutY="519.0">
+      <ImageView fx:id="imgArrowMarker100" layoutX="591.0" layoutY="519.0">
          <image>
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgArrowMarker6" layoutX="659.0" layoutY="519.0">
+      <ImageView fx:id="imgArrowMarker500" layoutX="659.0" layoutY="519.0">
          <image>
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgArrowMarker7" layoutX="728.0" layoutY="519.0">
+      <ImageView fx:id="imgArrowMarker1k" layoutX="728.0" layoutY="519.0">
          <image>
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgArrowMarker8" layoutX="797.0" layoutY="519.0">
+      <ImageView fx:id="imgArrowMarker5k" layoutX="797.0" layoutY="519.0">
          <image>
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <StackPane layoutX="121.0" layoutY="83.0" onMouseClicked="#onRules">
+      <StackPane fx:id="btnRules" layoutX="121.0" layoutY="83.0" onMouseClicked="#onRules">
          <children>
-            <ImageView fx:id="btnRules" fitHeight="32.0" fitWidth="100.0">
+            <ImageView fx:id="imgRules" fitHeight="32.0" fitWidth="100.0">
                <image>
                   <Image url="@casinoassets/OverallUI/ButtonUp.png" />
                </image>

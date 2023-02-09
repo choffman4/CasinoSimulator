@@ -16,6 +16,7 @@ import pokemon.masters.casinosimulator.services.ChangeScene;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Stack;
 
 public class RouletteController {
 
@@ -24,10 +25,12 @@ public class RouletteController {
     @FXML
     GridPane gridNumbers;
     @FXML
-    ImageView img0, btnBack, btnRules, btnSpin, img19to36, img1st12, img1to18, img2nd12, img2to1bottom, img2to1middle,
+    ImageView img0, img19to36, img1st12, img1to18, img2nd12, img2to1bottom, img2to1middle,
             img2to1top, img3rd12, imgArrowMarker1, imgArrowMarker10, imgArrowMarker20, imgArrowMarker30,
             imgArrowMarker5, imgArrowMarker6, imgArrowMarker7, imgArrowMarker8, imgBlackDiamond, imgEVEN, imgODD,
-            imgRedDiamond;
+            imgRedDiamond, imgBack, imgRules, imgSpin;
+    @FXML
+    private StackPane btnBack, btnRules, btnSpin;
     @FXML
     private Text txtChipsAmount, txtResultNumber;
     @FXML
@@ -207,6 +210,12 @@ public class RouletteController {
 
     @FXML
     void onRules(MouseEvent event) {
+
+    }
+
+
+    @FXML
+    void onSpin(MouseEvent event) {
 
     }
 }
