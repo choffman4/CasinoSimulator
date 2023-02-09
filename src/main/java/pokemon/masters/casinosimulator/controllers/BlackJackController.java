@@ -18,4 +18,54 @@ public class BlackJackController {
     protected void onBackPage(MouseEvent event) throws IOException {
         ChangeScene.changeScene(event, "chooseGameView.fxml");
     }
+
+    @FXML
+    void betFifty(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betFive(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betFiveHundred(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betFiveThousand(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betOne(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betOneHundred(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betOneThousand(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betTen(MouseEvent event) {
+
+    }
+
+    @FXML
+    void betTwenty(MouseEvent event) {
+
+    }
+
+    @FXML
+    void onRules(MouseEvent event) {
+
+    }
 }

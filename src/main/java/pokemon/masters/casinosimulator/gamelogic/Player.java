@@ -2,12 +2,10 @@ package pokemon.masters.casinosimulator.gamelogic;
 
 public class Player {
     private String name;
-    private int bankMoney;
     private int gamblingMoney;
 
-    public Player(String name, int bankMoney, int gamblingMoney) {
+    public Player(String name, int bankMoney) {
         this.name = name;
-        this.bankMoney = bankMoney;
         this.gamblingMoney = gamblingMoney;
     }
 
@@ -17,14 +15,6 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getBankMoney() {
-        return bankMoney;
-    }
-
-    public void setBankMoney(int bankMoney) {
-        this.bankMoney = bankMoney;
     }
 
     public int getGamblingMoney() {

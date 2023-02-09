@@ -4,31 +4,15 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="pokemon.masters.casinosimulator.controllers.BankController">
+<AnchorPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokemon.masters.casinosimulator.controllers.BankController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1050.0" pickOnBounds="true">
          <image>
             <Image url="@casinoassets/OverallUI/GenericFeltMat.jpeg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnBack" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="584.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnDeposit" fitHeight="100.0" fitWidth="300.0" layoutX="140.0" layoutY="325.0" pickOnBounds="true">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnWithdraw" fitHeight="100.0" fitWidth="300.0" layoutX="589.0" layoutY="325.0" pickOnBounds="true">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
          </image>
       </ImageView>
       <TextField fx:id="txtDeposit" alignment="CENTER" layoutX="140.0" layoutY="230.0" prefHeight="80.0" prefWidth="300.0" promptText="-">
@@ -46,21 +30,6 @@
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <Text layoutX="172.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DEPOSIT">
-         <font>
-            <Font name="ChunkFiveEx" size="52.0" />
-         </font>
-      </Text>
-      <Text layoutX="603.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WITHDRAW">
-         <font>
-            <Font name="ChunkFiveEx" size="44.0" />
-         </font>
-      </Text>
-      <Text layoutX="59.0" layoutY="619.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK">
-         <font>
-            <Font name="ChunkFiveEx" size="36.0" />
-         </font>
-      </Text>
       <Text fx:id="txtBank" layoutX="611.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BANK ACCOUNT: ">
          <font>
             <Font name="ChunkFiveEx" size="28.0" />
@@ -71,5 +40,47 @@
             <Font name="ChunkFiveEx" size="28.0" />
          </font>
       </Text>
+      <StackPane fx:id="btnDeposit" layoutX="140.0" layoutY="325.0" onMouseClicked="#onDeposit">
+         <children>
+            <ImageView fx:id="imgDeposit" fitHeight="100.0" fitWidth="300.0" pickOnBounds="true">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DEPOSIT">
+               <font>
+                  <Font name="ChunkFiveEx" size="52.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <StackPane fx:id="btnWithdraw" layoutX="588.0" layoutY="325.0" onMouseClicked="#onWithdraw">
+         <children>
+            <ImageView fx:id="imgWithdraw" fitHeight="100.0" fitWidth="300.0" pickOnBounds="true">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="WITHDRAW">
+               <font>
+                  <Font name="ChunkFiveEx" size="44.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <StackPane fx:id="btnBack" layoutX="22.0" layoutY="576.0" onMouseClicked="#onBackPage">
+         <children>
+            <ImageView fx:id="imgBack" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="BACK">
+               <font>
+                  <Font name="ChunkFiveEx" size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>

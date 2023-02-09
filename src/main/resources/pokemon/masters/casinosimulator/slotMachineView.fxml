@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0"
-      xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="pokemon.masters.casinosimulator.controllers.SlotMachineController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokemon.masters.casinosimulator.controllers.SlotMachineController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1050.0">
          <image>
@@ -17,67 +18,57 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#17b3678c" height="407.0" layoutX="15.0" layoutY="140.0" stroke="#16d43f" strokeType="INSIDE" width="201.0" />
-      <ImageView fx:id="btnBack" fitHeight="56.0" fitWidth="172.0" layoutX="29.0" layoutY="564.0">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="88.0" fitWidth="144.0" layoutX="29.0" layoutY="21.0">
          <image>
             <Image url="@casinoassets/OverallUI/SlotMachineIcon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip1" fitHeight="63.0" fitWidth="58.0" layoutX="217.0" layoutY="560.0">
+      <ImageView fx:id="btnChip1" fitHeight="58.0" fitWidth="58.0" layoutX="217.0" layoutY="560.0" onMouseClicked="#betOne">
          <image>
             <Image url="@casinoassets/OverallUI/Chip1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip5" fitHeight="63.0" fitWidth="58.0" layoutX="285.0" layoutY="561.0">
+      <ImageView fx:id="btnChip5" fitHeight="58.0" fitWidth="58.0" layoutX="285.0" layoutY="561.0" onMouseClicked="#betFive">
          <image>
             <Image url="@casinoassets/OverallUI/Chip5.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip10" fitHeight="63.0" fitWidth="58.0" layoutX="355.0" layoutY="560.0">
+      <ImageView fx:id="btnChip10" fitHeight="58.0" fitWidth="58.0" layoutX="355.0" layoutY="560.0" onMouseClicked="#betTen">
          <image>
             <Image url="@casinoassets/OverallUI/Chip10.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip20" fitHeight="63.0" fitWidth="58.0" layoutX="426.0" layoutY="560.0">
+      <ImageView fx:id="btnChip20" fitHeight="58.0" fitWidth="58.0" layoutX="426.0" layoutY="560.0" onMouseClicked="#betTwenty">
          <image>
             <Image url="@casinoassets/OverallUI/Chip20.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip50" fitHeight="63.0" fitWidth="58.0" layoutX="496.0" layoutY="561.0">
+      <ImageView fx:id="btnChip50" fitHeight="58.0" fitWidth="58.0" layoutX="496.0" layoutY="561.0" onMouseClicked="#betFifty">
          <image>
             <Image url="@casinoassets/OverallUI/Chip50.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip100" fitHeight="63.0" fitWidth="58.0" layoutX="566.0" layoutY="560.0">
+      <ImageView fx:id="btnChip100" fitHeight="58.0" fitWidth="58.0" layoutX="566.0" layoutY="560.0" onMouseClicked="#betOneHundred">
          <image>
             <Image url="@casinoassets/OverallUI/Chip100.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip500" fitHeight="63.0" fitWidth="58.0" layoutX="634.0" layoutY="560.0">
+      <ImageView fx:id="btnChip500" fitHeight="58.0" fitWidth="58.0" layoutX="634.0" layoutY="560.0" onMouseClicked="#betFiveHundred">
          <image>
             <Image url="@casinoassets/OverallUI/Chip500.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip1K" fitHeight="63.0" fitWidth="58.0" layoutX="703.0" layoutY="561.0">
+      <ImageView fx:id="btnChip1K" fitHeight="58.0" fitWidth="58.0" layoutX="703.0" layoutY="561.0" onMouseClicked="#betOneThousand">
          <image>
             <Image url="@casinoassets/OverallUI/Chip1000.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgChip5K" fitHeight="63.0" fitWidth="58.0" layoutX="772.0" layoutY="561.0">
+      <ImageView fx:id="btnChip5K" fitHeight="58.0" fitWidth="58.0" layoutX="772.0" layoutY="561.0" onMouseClicked="#betFiveThousand">
          <image>
             <Image url="@casinoassets/OverallUI/Chip5000.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnSpin" fitHeight="56.0" fitWidth="172.0" layoutX="847.0" layoutY="564.0">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imgArrowMarker" layoutX="370.0" layoutY="509.0">
+      <ImageView fx:id="imgArrowMarker10" layoutX="370.0" layoutY="509.0">
          <image>
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
@@ -132,11 +123,6 @@
             <Image url="@casinoassets/Slots/WheelBars.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnRules" fitHeight="32.0" fitWidth="100.0" layoutX="86.0" layoutY="95.0">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
       <Text fill="WHITE" layoutX="86.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- 1000:1" wrappingWidth="132.13671112060547">
          <font>
             <Font name="ChunkFiveEx" size="29.0" />
@@ -182,39 +168,113 @@
             <Font name="ChunkFiveEx" size="29.0" />
          </font>
       </Text>
-      <Text fx:id="txtSpin" layoutX="867.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SPIN" textAlignment="CENTER" wrappingWidth="132.13671112060547">
-         <font>
-            <Font name="ChunkFiveEx" size="42.0" />
-         </font>
-      </Text>
-      <Text fx:id="txtBack" layoutX="43.0" layoutY="603.0" onMouseClicked="#onBackPage" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="144.00000000000006">
-         <font>
-            <Font name="ChunkFiveEx" size="42.0" />
-         </font>
-      </Text>
-      <Text fx:id="txtChipsAmount" fill="WHITE" layoutX="837.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0" textAlignment="RIGHT" wrappingWidth="192.13671112060547">
+      <Text fx:id="txtChipsAmount" fill="WHITE" layoutX="826.0" layoutY="524.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0" textAlignment="RIGHT" wrappingWidth="192.13671112060547">
          <font>
             <Font name="ChunkFiveEx" size="33.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="903.0" layoutY="482.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHIPS:" textAlignment="CENTER" wrappingWidth="132.13671112060547">
+      <Text fill="WHITE" layoutX="885.0" layoutY="491.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHIPS:" textAlignment="RIGHT" wrappingWidth="132.13671112060547">
          <font>
             <Font name="ChunkFiveEx" size="30.0" />
          </font>
       </Text>
-      <Text fx:id="txtRules" layoutX="94.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RULES" textAlignment="CENTER" wrappingWidth="84.66665649414074">
-         <font>
-            <Font name="ChunkFiveEx" size="20.0" />
-         </font>
-      </Text>
-      <Text fx:id="txtBet" fill="WHITE" layoutX="458.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BET:" textAlignment="CENTER" wrappingWidth="132.13671112060547">
+      <Text fx:id="txtBet" fill="WHITE" layoutX="369.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BET:" textAlignment="CENTER" wrappingWidth="324.1366500854492">
          <font>
             <Font name="ChunkFiveEx" size="42.0" />
          </font>
       </Text>
       <ImageView fx:id="imgBetContainer" fitHeight="125.0" fitWidth="388.0" layoutX="331.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imgContainerSlot1" fitHeight="182.0" fitWidth="117.0" layoutX="325.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imgContainerSlot2" fitHeight="182.0" fitWidth="117.0" layoutX="473.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imgContainerSlot3" fitHeight="182.0" fitWidth="117.0" layoutX="624.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgSlot1" fitHeight="182.0" fitWidth="117.0" layoutX="325.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgSlot2" fitHeight="182.0" fitWidth="117.0" layoutX="473.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgSlot3" fitHeight="182.0" fitWidth="117.0" layoutX="624.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
+      <StackPane fx:id="btnBack" layoutX="28.0" layoutY="565.0" onMouseClicked="#onBackPage">
+         <children>
+            <ImageView fx:id="imgBack" fitHeight="56.0" fitWidth="172.0">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="txtBack" onMouseClicked="#onBackPage" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="144.00000000000006">
+               <font>
+                  <Font name="ChunkFiveEx" size="42.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="4.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+      <StackPane fx:id="btnSpin" layoutX="847.0" layoutY="565.0" onMouseClicked="#onSpin">
+         <children>
+            <ImageView fx:id="imgSpin" fitHeight="56.0" fitWidth="172.0">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="txtSpin" strokeType="OUTSIDE" strokeWidth="0.0" text="SPIN" textAlignment="CENTER" wrappingWidth="132.13671112060547">
+               <font>
+                  <Font name="ChunkFiveEx" size="42.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="4.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+      <StackPane fx:id="btnRules" layoutX="114.0" layoutY="93.0" onMouseClicked="#onRules">
+         <children>
+            <ImageView fx:id="imgRules" fitHeight="32.0" fitWidth="100.0">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="txtRules" strokeType="OUTSIDE" strokeWidth="0.0" text="RULES" textAlignment="CENTER" wrappingWidth="84.66665649414074">
+               <font>
+                  <Font name="ChunkFiveEx" size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <Circle fill="#1f93ff00" layoutX="833.0" layoutY="128.0" onMouseClicked="#onSpin" radius="26.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+      <ImageView fx:id="imgArrowMarker5" layoutX="300.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker1" layoutX="232.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker20" layoutX="441.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker50" layoutX="511.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker100" layoutX="581.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker500" layoutX="649.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker1k" layoutX="718.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgArrowMarker5k" layoutX="787.0" layoutY="509.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ArrowDown.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

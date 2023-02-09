@@ -1,54 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
-            prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="pokemon.masters.casinosimulator.controllers.MainMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokemon.masters.casinosimulator.controllers.MainMenuController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1050.0" pickOnBounds="true">
          <image>
             <Image url="@casinoassets/OverallUI/GenericFeltMat.jpeg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="393.0" fitWidth="712.0" layoutX="169.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="393.0" fitWidth="712.0" layoutX="169.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@casinoassets/OverallUI/CasinoIcon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnPlay" fitHeight="71.0" fitWidth="256.0" layoutX="397.0" layoutY="464.0" pickOnBounds="true">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnExit" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="btnMore" fitHeight="150.0" fitWidth="200.0" layoutX="836.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@casinoassets/OverallUI/ButtonUp.png" />
-         </image>
-      </ImageView>
-      <Text layoutX="448.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAY">
-         <font>
-            <Font name="ChunkFiveEx" size="52.0" />
-         </font>
-      </Text>
-      <Text layoutX="67.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EXIT">
-         <font>
-            <Font name="ChunkFiveEx" size="36.0" />
-         </font>
-      </Text>
-      <Text layoutX="859.0" layoutY="614.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MORE...">
-         <font>
-            <Font name="ChunkFiveEx" size="36.0" />
-         </font>
-      </Text>
+      <StackPane layoutX="397.0" layoutY="441.0" onMouseClicked="#onPlayGame">
+         <children>
+            <ImageView fx:id="btnPlay" fitHeight="71.0" fitWidth="256.0" pickOnBounds="true">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PLAY">
+               <font>
+                  <Font name="ChunkFiveEx" size="52.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="5.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+      <StackPane layoutX="41.0" layoutY="584.0" onMouseClicked="#onExitGame">
+         <children>
+            <ImageView fx:id="btnExit" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="EXIT">
+               <font>
+                  <Font name="ChunkFiveEx" size="36.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="2.0" />
+               </StackPane.margin>
+            </Text>
+         </children>
+      </StackPane>
+      <StackPane layoutX="810.0" layoutY="584.0" onMouseClicked="#onMoreOptions">
+         <children>
+            <ImageView fx:id="btnMore" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ButtonUp.png" />
+               </image>
+            </ImageView>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MORE...">
+               <font>
+                  <Font name="ChunkFiveEx" size="36.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets top="2.0" />
+               </StackPane.margin>
+            </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" rotate="10.6">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ComingSoonStamp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>
