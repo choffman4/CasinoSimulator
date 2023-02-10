@@ -1,8 +1,6 @@
 package pokemon.masters.casinosimulator.controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -20,7 +18,7 @@ public class ChooseGameController {
     //This function initialize runs whenever the scene loads
     @FXML
     protected void initialize() {
-        txtChipCount.setText(FormatMoney.Format(Player.gamblingMoney));
+        txtChipCount.setText(FormatMoney.Format(Player.getChipMoney()));
     }
 
     @FXML

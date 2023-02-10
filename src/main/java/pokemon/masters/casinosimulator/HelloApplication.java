@@ -1,7 +1,6 @@
 package pokemon.masters.casinosimulator;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -22,9 +21,9 @@ public class HelloApplication extends Application {
             stage.setScene(scene);
             stage.show();
             //initializing player data
-            Player.name = "Player";
-            Player.gamblingMoney = 10000;
-            Player.bankMoney = 15000;
+            Player.setName("Player");
+            Player.setChipMoney( 10000);
+            Player.setBankMoney(15000);
         } catch (IOException e) {
             e.printStackTrace();
         }
