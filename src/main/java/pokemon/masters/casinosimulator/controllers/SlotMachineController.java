@@ -13,6 +13,11 @@ import java.io.IOException;
 public class SlotMachineController {
 
     @FXML
+    protected void initialize() {
+
+    }
+
+    @FXML
     private StackPane btnBack, btnSpin, btnRules;
 
     @FXML
@@ -25,10 +30,9 @@ public class SlotMachineController {
     private Text txtBack, txtBet, txtChipsAmount, txtRules, txtSpin;
 
     @FXML
-    void onBackPage(MouseEvent event) {
-
+    protected void onBackPage(MouseEvent event) throws IOException {
+        ChangeScene.changeScene(event, "chooseGameView.fxml");
     }
-
     @FXML
     void onRules(MouseEvent event) {
 
