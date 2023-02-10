@@ -47,6 +47,10 @@ public class BankController {
         int bankMoney = Player.getBankMoney();
         int chipMoney = Player.getChipMoney();
 
+        if(depositAmount > Player.getChipMoney()) {
+            depositAmount = Player.getChipMoney();
+        }
+
         bankMoney += depositAmount;
         chipMoney -= depositAmount;
 
