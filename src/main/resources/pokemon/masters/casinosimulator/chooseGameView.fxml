@@ -17,7 +17,7 @@
             <Image url="@casinoassets/OverallUI/GenericFeltMat.jpeg" />
          </image>
       </ImageView>
-      <Text id="chipCount" fx:id="txtChipCount" fill="WHITE" layoutX="865.0" layoutY="551.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="RIGHT" wrappingWidth="114.8033447265625">
+      <Text id="chipCount" fx:id="txtChipCount" fill="WHITE" layoutX="708.0" layoutY="545.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$" textAlignment="RIGHT" wrappingWidth="267.4700927734375">
          <font>
             <Font name="ChunkFiveEx" size="31.0" />
          </font>
