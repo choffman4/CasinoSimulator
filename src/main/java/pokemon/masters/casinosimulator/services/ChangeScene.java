@@ -6,6 +6,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import pokemon.masters.casinosimulator.gamelogic.Player;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +17,7 @@ public class ChangeScene {
     private static Stage stage;
     private static Scene scene;
 
+    //This function allows the user to change between scenes on buttons like backPage or ChooseGame functions
     public static void changeScene(Event event, String strFXMLFileName) throws IOException {
 
         URL url = new File("src/main/resources/pokemon/masters/casinosimulator/" + strFXMLFileName).toURI().toURL();

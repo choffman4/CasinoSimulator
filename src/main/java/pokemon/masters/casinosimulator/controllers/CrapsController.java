@@ -18,4 +18,34 @@ public class CrapsController {
     protected void onBackPage(MouseEvent event) throws IOException {
         ChangeScene.changeScene(event, "chooseGameView.fxml");
     }
+
+    public void onRoll(MouseEvent mouseEvent) {
+    }
+
+    public void betOne(MouseEvent mouseEvent) {
+    }
+
+    public void betFive(MouseEvent mouseEvent) {
+    }
+
+    public void betTen(MouseEvent mouseEvent) {
+    }
+
+    public void betTwenty(MouseEvent mouseEvent) {
+    }
+
+    public void betFifty(MouseEvent mouseEvent) {
+    }
+
+    public void betOneHundred(MouseEvent mouseEvent) {
+    }
+
+    public void betFiveHundred(MouseEvent mouseEvent) {
+    }
+
+    public void betOneThousand(MouseEvent mouseEvent) {
+    }
+
+    public void betFiveThousand(MouseEvent mouseEvent) {
+    }
 }

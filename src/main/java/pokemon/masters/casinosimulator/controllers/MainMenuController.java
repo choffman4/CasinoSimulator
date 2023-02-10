@@ -10,13 +10,13 @@ import pokemon.masters.casinosimulator.services.ChangeScene;
 import java.io.IOException;
 
 public class MainMenuController {
+
     @FXML
     private ImageView btnExit, btnMore, btnPlay;
 
     @FXML
     protected void initialize() {
-        System.out.println("Welcome to Casino Simulator");
-        //Player player = new Player("Player", 4000);
+
     }
 
     //This button exits the game
@@ -34,4 +34,5 @@ public class MainMenuController {
     void onPlayGame(MouseEvent event) throws IOException {
         ChangeScene.changeScene(event, "chooseGameView.fxml");
     }
+
 }

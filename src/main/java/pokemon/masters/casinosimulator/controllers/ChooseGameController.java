@@ -1,24 +1,30 @@
 package pokemon.masters.casinosimulator.controllers;
 
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import pokemon.masters.casinosimulator.gamelogic.Player;
 import pokemon.masters.casinosimulator.services.ChangeScene;
+import pokemon.masters.casinosimulator.services.FormatMoney;
 
 import java.io.IOException;
 
 public class ChooseGameController {
+    Player player;
+    StackPane btnBack;
 
     //This function initialize runs whenever the scene loads
     @FXML
     protected void initialize() {
-        txtChipCount.setText("$4,000");
-        //stage.setUserData(object);
+        txtChipCount.setText(FormatMoney.Format(Player.gamblingMoney));
     }
 
     @FXML
-    private ImageView btnBack, btnBank, btnBlackJack, btnCraps, btnPoker, btnRoulette, btnSlots;
+    private ImageView imgBack, imgBank, btnBlackJack, btnCraps, btnPoker, btnRoulette, btnSlots;
     @FXML
     private Text txtChipCount;
 
@@ -50,6 +56,11 @@ public class ChooseGameController {
     @FXML
     void onRoulette(MouseEvent event) throws IOException {
         ChangeScene.changeScene(event, "rouletteView.fxml");
+    }
+
+    @FXML
+    void onBank(MouseEvent event) throws IOException {
+        ChangeScene.changeScene(event, "bankView.fxml");
     }
 
 }

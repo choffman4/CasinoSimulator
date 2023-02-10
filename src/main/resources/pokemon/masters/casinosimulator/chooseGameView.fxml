@@ -60,9 +60,9 @@
             </ImageView>
          </children>
       </HBox>
-      <StackPane layoutX="804.0" layoutY="566.0">
+      <StackPane fx:id="btnBack" layoutX="804.0" layoutY="566.0" onMouseClicked="#onBank">
          <children>
-            <ImageView fx:id="btnBank" fitHeight="56.0" fitWidth="172.0">
+            <ImageView fx:id="imgBank" fitHeight="56.0" fitWidth="172.0">
                <image>
                   <Image url="@casinoassets/OverallUI/ButtonUp.png" />
                </image>
@@ -72,14 +72,14 @@
                   <Font name="ChunkFiveEx" size="35.0" />
                </font>
                <StackPane.margin>
-                  <Insets bottom="3.0" />
+                  <Insets bottom="3.0" top="6.0" />
                </StackPane.margin>
             </Text>
          </children>
       </StackPane>
       <StackPane layoutX="54.0" layoutY="566.0" onMouseClicked="#onBackPage">
          <children>
-            <ImageView fx:id="btnBack" fitHeight="56.0" fitWidth="172.0">
+            <ImageView fx:id="imgBack" fitHeight="56.0" fitWidth="172.0">
                <image>
                   <Image url="@casinoassets/OverallUI/ButtonUp.png" />
                </image>

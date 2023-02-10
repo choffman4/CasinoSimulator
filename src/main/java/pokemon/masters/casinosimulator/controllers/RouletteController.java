@@ -50,9 +50,9 @@ public class RouletteController {
         initializeBettingButtons();
     }
 
-    //loop through grid and add a stackpane with child image
+    //loop through grid and add a stack pane with child image
     private void getGridButtons() {
-        //padding and size of gridpane units
+        //padding and size of grid pane units
         gridNumbers.setPadding(new Insets(5, 5, 5, 5));
         gridNumbers.setHgap(5);
         gridNumbers.setVgap(5);
@@ -69,8 +69,8 @@ public class RouletteController {
         }
     }
 
+    //These are all the buttons and images associated with each of the numbers 1-36
     private void initializeBettingButtons() {
-        //These are all the buttons and images associated with each of the numbers 1-36
         StackPane btn1 = (StackPane) gridNumbers.getChildren().get(0);
         ImageView img1 = (ImageView) btn1.getChildren().get(0);
         StackPane btn2 = (StackPane) gridNumbers.getChildren().get(1);
@@ -147,11 +147,27 @@ public class RouletteController {
         ImageView img36 = (ImageView) btn36.getChildren().get(0);
     }
 
-
+    //Get's game images from resources
     private void getGameImages() {
         try {
             InputStream chip1 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip1.png");
             chipImage[0] = new Image(chip1);
+            InputStream chip5 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip5.png");
+            chipImage[1] = new Image(chip1);
+            InputStream chip10 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip10.png");
+            chipImage[2] = new Image(chip1);
+            InputStream chip20 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip20.png");
+            chipImage[3] = new Image(chip1);
+            InputStream chip50 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip50.png");
+            chipImage[4] = new Image(chip1);
+            InputStream chip100 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip100.png");
+            chipImage[5] = new Image(chip1);
+            InputStream chip500 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip500.png");
+            chipImage[6] = new Image(chip1);
+            InputStream chip1000 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip1000.png");
+            chipImage[7] = new Image(chip1);
+            InputStream chip5000 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip5000.png");
+            chipImage[8] = new Image(chip1);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -163,6 +179,7 @@ public class RouletteController {
         ChangeScene.changeScene(event, "chooseGameView.fxml");
     }
 
+    //These buttons are used for changing the bet amount
     @FXML
     void betFifty(MouseEvent event) {
 
@@ -208,12 +225,14 @@ public class RouletteController {
 
     }
 
+    //This function opens a rule window
     @FXML
     void onRules(MouseEvent event) {
 
     }
 
 
+    //This function spins the wheel
     @FXML
     void onSpin(MouseEvent event) {
 
