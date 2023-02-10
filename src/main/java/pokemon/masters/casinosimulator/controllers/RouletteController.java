@@ -20,7 +20,7 @@ import java.util.Stack;
 
 public class RouletteController {
 
-    private final Image[] chipImage = new Image[3];
+    private final Image[] chipImage = new Image[36];
 
     @FXML
     GridPane gridNumbers;
@@ -235,6 +235,6 @@ public class RouletteController {
     //This function spins the wheel
     @FXML
     void onSpin(MouseEvent event) {
-
+        System.out.println("Wheel is spinning");
     }
 }
