@@ -203,67 +203,67 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <StackPane fx:id="btn1st12" layoutX="293.0" layoutY="302.0" prefHeight="58.0" prefWidth="223.0">
+      <StackPane fx:id="btn1st12" layoutX="293.0" layoutY="302.0" onMouseClicked="#on1st12" prefHeight="58.0" prefWidth="223.0">
          <children>
             <ImageView fx:id="img1st12" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn2nd12" layoutX="520.0" layoutY="302.0" prefHeight="58.0" prefWidth="223.0">
+      <StackPane fx:id="btn2nd12" layoutX="520.0" layoutY="302.0" onMouseClicked="#on2nd12" prefHeight="58.0" prefWidth="223.0">
          <children>
             <ImageView fx:id="img2nd12" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn3rd12" layoutX="746.0" layoutY="302.0" prefHeight="58.0" prefWidth="223.0">
+      <StackPane fx:id="btn3rd12" layoutX="746.0" layoutY="302.0" onMouseClicked="#on3rd12" prefHeight="58.0" prefWidth="223.0">
          <children>
             <ImageView fx:id="img3rd12" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn1to18" layoutX="293.0" layoutY="361.0" prefHeight="58.0" prefWidth="111.0">
+      <StackPane fx:id="btn1to18" layoutX="293.0" layoutY="361.0" onMouseClicked="#on1to18" prefHeight="58.0" prefWidth="111.0">
          <children>
             <ImageView fx:id="img1to18" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btnEVEN" layoutX="406.0" layoutY="359.0" prefHeight="58.0" prefWidth="111.0">
+      <StackPane fx:id="btnEVEN" layoutX="406.0" layoutY="359.0" onMouseClicked="#onEven" prefHeight="58.0" prefWidth="111.0">
          <children>
             <ImageView fx:id="imgEVEN" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btnRedDiamond" layoutX="519.0" layoutY="361.0" prefHeight="58.0" prefWidth="111.0">
+      <StackPane fx:id="btnRedDiamond" layoutX="519.0" layoutY="361.0" onMouseClicked="#onRed" prefHeight="58.0" prefWidth="111.0">
          <children>
             <ImageView fx:id="imgRedDiamond" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btnBlackDiamond" layoutX="632.0" layoutY="361.0" prefHeight="58.0" prefWidth="111.0">
+      <StackPane fx:id="btnBlackDiamond" layoutX="632.0" layoutY="361.0" onMouseClicked="#onBlack" prefHeight="58.0" prefWidth="111.0">
          <children>
-            <ImageView fx:id="imgBlackDiamond" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgBlackDiamond" fitHeight="46.0" fitWidth="46.0" onMouseClicked="#onBlack" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btnODD" layoutX="746.0" layoutY="361.0" prefHeight="58.0" prefWidth="111.0">
+      <StackPane fx:id="btnODD" layoutX="746.0" layoutY="361.0" onMouseClicked="#onOdd" prefHeight="58.0" prefWidth="111.0">
          <children>
             <ImageView fx:id="imgODD" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn19to36" layoutX="857.0" layoutY="361.0" prefHeight="58.0" prefWidth="111.0">
+      <StackPane fx:id="btn19to36" layoutX="857.0" layoutY="361.0" onMouseClicked="#on19to36" prefHeight="58.0" prefWidth="111.0">
          <children>
             <ImageView fx:id="img19to36" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn2to1bottom" layoutX="970.0" layoutY="223.0" prefHeight="78.0" prefWidth="58.0">
+      <StackPane fx:id="btn2to1bottom" layoutX="970.0" layoutY="223.0" onMouseClicked="#on2to1bot" prefHeight="78.0" prefWidth="58.0">
          <children>
             <ImageView fx:id="img2to1bottom" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn2to1middle" layoutX="970.0" layoutY="144.0" prefHeight="78.0" prefWidth="58.0">
+      <StackPane fx:id="btn2to1middle" layoutX="970.0" layoutY="144.0" onMouseClicked="#on2to1mid" prefHeight="78.0" prefWidth="58.0">
          <children>
             <ImageView fx:id="img2to1middle" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn2to1top" layoutX="969.0" layoutY="66.0" prefHeight="78.0" prefWidth="58.0">
+      <StackPane fx:id="btn2to1top" layoutX="969.0" layoutY="66.0" onMouseClicked="#on2to1top" prefHeight="78.0" prefWidth="58.0">
          <children>
             <ImageView fx:id="img2to1top" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
-      <StackPane fx:id="btn0" layoutX="227.0" layoutY="145.0" prefHeight="78.0" prefWidth="64.0">
+      <StackPane fx:id="btn0" layoutX="227.0" layoutY="145.0" onMouseClicked="#onZero" prefHeight="78.0" prefWidth="64.0">
          <children>
             <ImageView fx:id="img0" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
