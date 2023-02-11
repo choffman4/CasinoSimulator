@@ -235,7 +235,7 @@
       </StackPane>
       <StackPane fx:id="btnBlackDiamond" layoutX="632.0" layoutY="361.0" onMouseClicked="#onBlack" prefHeight="58.0" prefWidth="111.0">
          <children>
-            <ImageView fx:id="imgBlackDiamond" fitHeight="46.0" fitWidth="46.0" onMouseClicked="#onBlack" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imgBlackDiamond" fitHeight="46.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </StackPane>
       <StackPane fx:id="btnODD" layoutX="746.0" layoutY="361.0" onMouseClicked="#onOdd" prefHeight="58.0" prefWidth="111.0">
