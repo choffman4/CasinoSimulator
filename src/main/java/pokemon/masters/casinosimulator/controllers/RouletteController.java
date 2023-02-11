@@ -1,5 +1,6 @@
 package pokemon.masters.casinosimulator.controllers;
 
+import javafx.animation.*;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -9,18 +10,24 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.TilePane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
+import pokemon.masters.casinosimulator.gamelogic.Roulette;
 import pokemon.masters.casinosimulator.services.ChangeScene;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Random;
 import java.util.Stack;
 
 public class RouletteController {
 
     private final Image[] chipImage = new Image[36];
+
+    Roulette game = new Roulette();
 
     @FXML
     GridPane gridNumbers;
@@ -28,7 +35,7 @@ public class RouletteController {
     ImageView img0, img19to36, img1st12, img1to18, img2nd12, img2to1bottom, img2to1middle,
             img2to1top, img3rd12, imgArrowMarker1, imgArrowMarker10, imgArrowMarker20, imgArrowMarker30,
             imgArrowMarker5, imgArrowMarker6, imgArrowMarker7, imgArrowMarker8, imgBlackDiamond, imgEVEN, imgODD,
-            imgRedDiamond, imgBack, imgRules, imgSpin;
+            imgRedDiamond, imgBack, imgRules, imgSpin, imgWheel;
     @FXML
     private StackPane btnBack, btnRules, btnSpin;
     @FXML
@@ -38,7 +45,7 @@ public class RouletteController {
 
     @FXML
     protected void initialize() {
-        System.out.println("Hello World");
+        System.out.println("Welcome to Roulette");
 
         //get pokerchip images
         getGameImages();
@@ -48,6 +55,9 @@ public class RouletteController {
 
         //Initialize buttons in grid number 1-36
         initializeBettingButtons();
+
+        circleResultColor.setVisible(false);
+        txtResultNumber.setVisible(false);
     }
 
     //loop through grid and add a stack pane with child image
@@ -235,6 +245,61 @@ public class RouletteController {
     //This function spins the wheel
     @FXML
     void onSpin(MouseEvent event) {
+
+        //Spin Wheel
+        ////////////////////
         System.out.println("Wheel is spinning");
+        Random random = new Random();
+        int spinDuration = random.nextInt(2) + 3; // generates a random number between 3 and 5
+
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().addAll(
+                new KeyFrame(Duration.ZERO, new KeyValue(imgWheel.rotateProperty(), 0)),
+                new KeyFrame(Duration.seconds(spinDuration), new KeyValue(imgWheel.rotateProperty(), 360))
+        );
+        timeline.play();
+        ////////////////////
+        int role = game.getRoleNumber();
+        timeline.setOnFinished(e -> updateResult(role));
+
+    }
+
+    private void updateResult(int role) {
+        if(role == 0) {
+            game.setRoleColor(0);
+            updateSpinResult(role, game.getRoleColor());
+        } else if(role == 1 || role == 3 || role == 5 || role == 7 || role == 9 || role == 12 || role == 14
+                || role == 16 || role == 18 || role == 19 || role == 21 || role == 23 || role == 25 || role == 27
+                || role == 30 || role == 32 || role == 34 || role == 36) {
+            game.setRoleColor(1);
+            updateSpinResult(role, game.getRoleColor());
+        } else {
+            game.setRoleColor(2);
+            updateSpinResult(role, game.getRoleColor());
+        }
+        circleResultColor.setVisible(true);
+        txtResultNumber.setVisible(true);
+    }
+
+    private void updateSpinResult(int role, int color) {
+        switch (color) {
+            case 0:
+                circleResultColor.setFill(Color.GREEN);
+                txtResultNumber.setText(String.valueOf(role));
+                break;
+            case 1:
+                circleResultColor.setFill(Color.RED);
+                txtResultNumber.setText(String.valueOf(role));
+                break;
+            case 2:
+                circleResultColor.setFill(Color.BLACK);
+                txtResultNumber.setText(String.valueOf(role));
+                break;
+            // ...
+            default:
+                circleResultColor.setFill(Color.YELLOW);
+                txtResultNumber.setText(String.valueOf(role));
+                break;
+        }
     }
 }

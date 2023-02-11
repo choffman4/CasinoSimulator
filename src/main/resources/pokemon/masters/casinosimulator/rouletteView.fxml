@@ -12,9 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0"
-      prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="pokemon.masters.casinosimulator.controllers.RouletteController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokemon.masters.casinosimulator.controllers.RouletteController">
    <children>
       <ImageView fitHeight="650.0" fitWidth="1050.0">
          <image>
@@ -86,7 +84,7 @@
             <Font name="ChunkFiveEx" size="33.0" />
          </font>
       </Text>
-      <ImageView fitHeight="235.0" fitWidth="235.0" layoutX="27.0" layoutY="284.0">
+      <ImageView fx:id="imgWheel" fitHeight="235.0" fitWidth="235.0" layoutX="27.0" layoutY="284.0">
          <image>
             <Image url="@casinoassets/Roulette/RouletteWheel_SingleZero.png" />
          </image>
@@ -96,7 +94,7 @@
             <Image url="@casinoassets/Roulette/Roulette_SingleZero.png" />
          </image>
       </ImageView>
-      <StackPane fx:id="btnSpin" layoutX="859.0" layoutY="575.0">
+      <StackPane fx:id="btnSpin" layoutX="859.0" layoutY="575.0" onMouseClicked="#onSpin">
          <children>
             <ImageView fx:id="imgSpin" fitHeight="56.0" fitWidth="172.0" onMouseClicked="#onSpin">
                <image>
