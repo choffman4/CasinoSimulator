@@ -1,6 +1,8 @@
 package pokemon.masters.casinosimulator.controllers;
 
 import javafx.animation.*;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
@@ -185,6 +187,232 @@ public class RouletteController {
         img35 = (ImageView) btn35.getChildren().get(0);
         btn36 = (StackPane) gridNumbers.getChildren().get(35);
         img36 = (ImageView) btn36.getChildren().get(0);
+
+        img0.setImage(null);
+        img1.setImage(null);
+        img2.setImage(null);
+        img3.setImage(null);
+        img4.setImage(null);
+        img5.setImage(null);
+        img6.setImage(null);
+        img7.setImage(null);
+        img8.setImage(null);
+        img9.setImage(null);
+        img10.setImage(null);
+        img11.setImage(null);
+        img12.setImage(null);
+        img13.setImage(null);
+        img14.setImage(null);
+        img15.setImage(null);
+        img16.setImage(null);
+        img17.setImage(null);
+        img18.setImage(null);
+        img19.setImage(null);
+        img20.setImage(null);
+        img21.setImage(null);
+        img22.setImage(null);
+        img23.setImage(null);
+        img24.setImage(null);
+        img25.setImage(null);
+        img26.setImage(null);
+        img27.setImage(null);
+        img28.setImage(null);
+        img29.setImage(null);
+        img30.setImage(null);
+        img11.setImage(null);
+        img32.setImage(null);
+        img33.setImage(null);
+        img34.setImage(null);
+        img35.setImage(null);
+        img36.setImage(null);
+
+        btn1.setOnMouseClicked(event -> {
+            placeChip(img1, game.getCurrentChipBets());
+            System.out.println("btn1 clicked!");
+        });
+        btn2.setOnMouseClicked(event -> {
+            placeChip(img2, game.getCurrentChipBets());
+            System.out.println("btn2 clicked!");
+        });
+        btn3.setOnMouseClicked(event -> {
+            placeChip(img3, game.getCurrentChipBets());
+            System.out.println("btn3 clicked!");
+        });
+        btn4.setOnMouseClicked(event -> {
+            placeChip(img4, game.getCurrentChipBets());
+            System.out.println("btn4 clicked!");
+        });
+        btn5.setOnMouseClicked(event -> {
+            placeChip(img5, game.getCurrentChipBets());
+            System.out.println("btn5 clicked!");
+        });
+        btn6.setOnMouseClicked(event -> {
+            placeChip(img6, game.getCurrentChipBets());
+            System.out.println("btn6 clicked!");
+        });
+        btn7.setOnMouseClicked(event -> {
+            placeChip(img7, game.getCurrentChipBets());
+            System.out.println("btn7 clicked!");
+        });
+        btn8.setOnMouseClicked(event -> {
+            placeChip(img8, game.getCurrentChipBets());
+            System.out.println("btn8 clicked!");
+        });
+        btn9.setOnMouseClicked(event -> {
+            placeChip(img9, game.getCurrentChipBets());
+            System.out.println("btn9 clicked!");
+        });
+        btn10.setOnMouseClicked(event -> {
+            placeChip(img10, game.getCurrentChipBets());
+            System.out.println("btn10 clicked!");
+        });
+        btn11.setOnMouseClicked(event -> {
+            placeChip(img11, game.getCurrentChipBets());
+            System.out.println("btn11 clicked!");
+        });
+        btn12.setOnMouseClicked(event -> {
+            placeChip(img12, game.getCurrentChipBets());
+            System.out.println("btn12 clicked!");
+        });
+        btn13.setOnMouseClicked(event -> {
+            placeChip(img13, game.getCurrentChipBets());
+            System.out.println("btn13 clicked!");
+        });
+        btn14.setOnMouseClicked(event -> {
+            placeChip(img14, game.getCurrentChipBets());
+            System.out.println("btn14 clicked!");
+        });
+        btn15.setOnMouseClicked(event -> {
+            placeChip(img15, game.getCurrentChipBets());
+            System.out.println("btn15 clicked!");
+        });
+        btn16.setOnMouseClicked(event -> {
+            placeChip(img16, game.getCurrentChipBets());
+            System.out.println("btn16 clicked!");
+        });
+        btn17.setOnMouseClicked(event -> {
+            placeChip(img17, game.getCurrentChipBets());
+            System.out.println("btn17 clicked!");
+        });
+        btn18.setOnMouseClicked(event -> {
+            placeChip(img18, game.getCurrentChipBets());
+            System.out.println("btn18 clicked!");
+        });
+        btn19.setOnMouseClicked(event -> {
+            placeChip(img19, game.getCurrentChipBets());
+            System.out.println("btn19 clicked!");
+        });
+        btn20.setOnMouseClicked(event -> {
+            placeChip(img20, game.getCurrentChipBets());
+            System.out.println("btn20 clicked!");
+        });
+        btn21.setOnMouseClicked(event -> {
+            placeChip(img21, game.getCurrentChipBets());
+            System.out.println("btn21 clicked!");
+        });
+        btn22.setOnMouseClicked(event -> {
+            placeChip(img22, game.getCurrentChipBets());
+            System.out.println("btn22 clicked!");
+        });
+        btn23.setOnMouseClicked(event -> {
+            placeChip(img23, game.getCurrentChipBets());
+            System.out.println("btn23 clicked!");
+        });
+        btn24.setOnMouseClicked(event -> {
+            placeChip(img24, game.getCurrentChipBets());
+            System.out.println("btn24 clicked!");
+        });
+        btn25.setOnMouseClicked(event -> {
+            placeChip(img25, game.getCurrentChipBets());
+            System.out.println("btn25 clicked!");
+        });
+        btn26.setOnMouseClicked(event -> {
+            placeChip(img26, game.getCurrentChipBets());
+            System.out.println("btn26 clicked!");
+        });
+        btn27.setOnMouseClicked(event -> {
+            placeChip(img27, game.getCurrentChipBets());
+            System.out.println("btn27 clicked!");
+        });
+        btn28.setOnMouseClicked(event -> {
+            placeChip(img28, game.getCurrentChipBets());
+            System.out.println("btn28 clicked!");
+        });
+        btn29.setOnMouseClicked(event -> {
+            placeChip(img29, game.getCurrentChipBets());
+            System.out.println("btn29 clicked!");
+        });
+        btn30.setOnMouseClicked(event -> {
+            placeChip(img30, game.getCurrentChipBets());
+            System.out.println("btn30 clicked!");
+        });
+        btn31.setOnMouseClicked(event -> {
+            placeChip(img31, game.getCurrentChipBets());
+            System.out.println("btn31 clicked!");
+        });
+        btn32.setOnMouseClicked(event -> {
+            placeChip(img32, game.getCurrentChipBets());
+            System.out.println("btn32 clicked!");
+        });
+        btn33.setOnMouseClicked(event -> {
+            placeChip(img33, game.getCurrentChipBets());
+            System.out.println("btn33 clicked!");
+        });
+        btn34.setOnMouseClicked(event -> {
+            placeChip(img34, game.getCurrentChipBets());
+            System.out.println("btn34 clicked!");
+        });
+        btn35.setOnMouseClicked(event -> {
+            placeChip(img35, game.getCurrentChipBets());
+            System.out.println("btn35 clicked!");
+        });
+        btn36.setOnMouseClicked(event -> {
+            placeChip(img36, game.getCurrentChipBets());
+            System.out.println("btn36 clicked!");
+        });
+
+
+    }
+
+    private void setChipImage(ImageView img, int id) {
+        if(img.getImage() == null) {
+            img.setImage(chipImage[id]);
+        } else {
+            img.setImage(null);
+        }
+
+    }
+
+    private void placeChip(ImageView img, int currentChip) {
+        switch (currentChip) {
+            case 1:
+                setChipImage(img, 0);
+                break;
+            case 5:
+                setChipImage(img, 1);
+                break;
+            case 10:
+                setChipImage(img, 2);
+                break;
+            case 20:
+                setChipImage(img, 3);
+                break;
+            case 50:
+                setChipImage(img, 4);
+                break;
+            case 100:
+                setChipImage(img, 5);
+                break;
+            case 500:
+                setChipImage(img, 6);
+                break;
+            case 1000:
+                setChipImage(img, 7);
+                break;
+            case 5000:
+                setChipImage(img, 8);
+                break;
+        }
     }
 
     //Get's game images from resources
@@ -193,21 +421,21 @@ public class RouletteController {
             InputStream chip1 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip1.png");
             chipImage[0] = new Image(chip1);
             InputStream chip5 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip5.png");
-            chipImage[1] = new Image(chip1);
+            chipImage[1] = new Image(chip5);
             InputStream chip10 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip10.png");
-            chipImage[2] = new Image(chip1);
+            chipImage[2] = new Image(chip10);
             InputStream chip20 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip20.png");
-            chipImage[3] = new Image(chip1);
+            chipImage[3] = new Image(chip20);
             InputStream chip50 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip50.png");
-            chipImage[4] = new Image(chip1);
+            chipImage[4] = new Image(chip50);
             InputStream chip100 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip100.png");
-            chipImage[5] = new Image(chip1);
+            chipImage[5] = new Image(chip100);
             InputStream chip500 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip500.png");
-            chipImage[6] = new Image(chip1);
+            chipImage[6] = new Image(chip500);
             InputStream chip1000 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip1000.png");
-            chipImage[7] = new Image(chip1);
+            chipImage[7] = new Image(chip1000);
             InputStream chip5000 = new FileInputStream("src/main/resources/pokemon/masters/casinosimulator/casinoassets/OverallUI/Chip5000.png");
-            chipImage[8] = new Image(chip1);
+            chipImage[8] = new Image(chip5000);
         } catch (Exception e) {
             e.printStackTrace();
         }
