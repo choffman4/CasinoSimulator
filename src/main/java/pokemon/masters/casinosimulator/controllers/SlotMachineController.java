@@ -2,19 +2,69 @@ package pokemon.masters.casinosimulator.controllers;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import pokemon.masters.casinosimulator.services.ChangeScene;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class SlotMachineController {
 
+    protected ArrayList<Image> slotImages = new ArrayList<>();
+
     @FXML
     protected void initialize() {
+//        slotImages.clear();
 
+        try {
+            InputStream banana = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelBanana.png");
+            Image imgBanana = new Image(banana);
+            slotImages.add(imgBanana);
+
+            InputStream bars = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelBars.png");
+            Image imgBars = new Image(bars);
+            slotImages.add(imgBars);
+
+            InputStream bell = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelBell.png");
+            Image imgBell = new Image(bell);
+            slotImages.add(imgBell);
+
+            InputStream cherry = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelCherry.png");
+            Image imgCherry = new Image(cherry);
+            slotImages.add(imgCherry);
+
+            InputStream lemon = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelLemon.png");
+            Image imgLemon = new Image(lemon);
+            slotImages.add(imgLemon);
+
+            InputStream melon = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelMelon.png");
+            Image imgMelon = new Image(melon);
+            slotImages.add(imgMelon);
+
+            InputStream orange = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelOrange.png");
+            Image imgOrange = new Image(orange);
+            slotImages.add(imgOrange);
+
+            InputStream plum = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelPlum.png");
+            Image imgPlum = new Image(plum);
+            slotImages.add(imgPlum);
+
+            InputStream seven = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelSeven.png");
+            Image imgSeven = new Image(seven);
+            slotImages.add(imgSeven);
+
+            System.out.println(slotImages);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -86,6 +136,16 @@ public class SlotMachineController {
     @FXML
     void betTwenty(MouseEvent event) {
 
+    }
+
+    public int randNum() {
+
+        return ThreadLocalRandom.current().nextInt(0, 4);
+    }
+
+    public boolean randTF() {
+
+        return ThreadLocalRandom.current().nextBoolean();
     }
 
 }
