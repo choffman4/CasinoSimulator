@@ -8,8 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="pokemon.masters.casinosimulator.controllers.BlackJackController">
+<AnchorPane prefHeight="650.0" prefWidth="1050.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pokemon.masters.casinosimulator.controllers.BlackJackController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="650.0" fitWidth="1050.0" pickOnBounds="true">
@@ -45,7 +44,7 @@
          <image>
             <Image url="@casinoassets/BlackJack/Cards/cardHearts10.png" />
          </image></ImageView>
-      <ImageView fx:id="playerCard2" fitHeight="80.0" fitWidth="58.0" layoutX="490.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="playerCard2" fitHeight="80.0" fitWidth="58.0" layoutX="480.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@casinoassets/BlackJack/Cards/cardSpades6.png" />
          </image>
@@ -84,7 +83,7 @@
                   <Image url="@casinoassets/OverallUI/ButtonUp.png" />
                </image>
             </ImageView>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HIT">
+            <Text fx:id="txtDeal" strokeType="OUTSIDE" strokeWidth="0.0" text="HIT">
                <font>
                   <Font name="ChunkFiveEx" size="36.0" />
                </font>
@@ -168,10 +167,55 @@
          </image>
       </ImageView>
       <ImageView fx:id="imgChipBet" fitHeight="33.0" fitWidth="33.0" layoutX="489.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fill="WHITE" layoutX="422.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16">
+      <Text fx:id="txtScore" fill="WHITE" layoutX="422.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16">
          <font>
             <Font name="ChunkFiveEx" size="36.0" />
          </font>
       </Text>
+      <ImageView fx:id="playerCard3" fitHeight="80.0" fitWidth="58.0" layoutX="490.0" layoutY="434.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casinoassets/BlackJack/Cards/cardSpades6.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerCard4" fitHeight="80.0" fitWidth="58.0" layoutX="496.0" layoutY="452.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casinoassets/BlackJack/Cards/cardSpades6.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="playerCard5" fitHeight="80.0" fitWidth="58.0" layoutX="505.0" layoutY="466.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casinoassets/BlackJack/Cards/cardSpades6.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtDealerScore" fill="WHITE" layoutX="422.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="ChunkFiveEx" size="36.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="dealerCard3" fitHeight="80.0" fitWidth="58.0" layoutX="500.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casinoassets/BlackJack/Cards/cardSpadesJ.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealerCard4" fitHeight="80.0" fitWidth="58.0" layoutX="510.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casinoassets/BlackJack/Cards/cardSpadesJ.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dealerCard5" fitHeight="80.0" fitWidth="58.0" layoutX="520.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casinoassets/BlackJack/Cards/cardSpadesJ.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="txtMessage" blendMode="SRC_ATOP" layoutX="342.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font name="ChunkFiveEx" size="72.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="imgCenterChip" fitHeight="36.0" fitWidth="39.0" layoutX="488.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@casinoassets/OverallUI/Chip1.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
