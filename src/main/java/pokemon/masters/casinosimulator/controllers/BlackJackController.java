@@ -89,7 +89,7 @@ public class BlackJackController {
 
     @FXML
     void onStand(MouseEvent event) {
-        if (!gameOver) {
+        if (!gameOver && !newGame) {
             gameOver = true;
             DealerTurn();
             CheckWin();
@@ -274,7 +274,7 @@ public class BlackJackController {
 
         try {
             for (File cardFile : cardFiles) {
-                if (cardFile.toString().contains("Joker") == false && cardFile.toString().contains("Back") == false) {
+                if (!cardFile.toString().contains("Joker") && !cardFile.toString().contains("Back")) {
                     FileInputStream fs = new FileInputStream(cardFile);
                     cardImages.add(new Image(fs));
                 }

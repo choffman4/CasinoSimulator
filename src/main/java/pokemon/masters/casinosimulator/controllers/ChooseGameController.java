@@ -48,7 +48,7 @@ public class ChooseGameController {
 
     @FXML
     void onPoker(MouseEvent event) throws IOException {
-//        ChangeScene.changeScene(event, "pokerView.fxml");
+       ChangeScene.changeScene(event, "pokerView.fxml");
     }
 
     @FXML
