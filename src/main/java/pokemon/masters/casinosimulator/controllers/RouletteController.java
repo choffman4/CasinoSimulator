@@ -2,18 +2,20 @@ package pokemon.masters.casinosimulator.controllers;
 
 import javafx.animation.*;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
 import pokemon.masters.casinosimulator.gamelogic.Player;
-import pokemon.masters.casinosimulator.gamelogic.Roulette;
+import pokemon.masters.casinosimulator.gamelogic.Roulette.Cell;
+import pokemon.masters.casinosimulator.gamelogic.Roulette.Roulette;
+import pokemon.masters.casinosimulator.gamelogic.Roulette.RouletteBoard;
+import pokemon.masters.casinosimulator.gamelogic.Roulette.SpinResult;
 import pokemon.masters.casinosimulator.services.ChangeScene;
 import pokemon.masters.casinosimulator.services.FormatMoney;
 
@@ -25,7 +27,15 @@ import java.util.Random;
 public class RouletteController {
 
     private final Image[] chipImage = new Image[10];
-    private final Roulette game = new Roulette();
+    private RouletteBoard gameBoard = new RouletteBoard();
+
+    private boolean displayRules = false;
+    TextArea rulesTextArea;
+
+
+
+    @FXML
+    private Pane rootPane;
 
     @FXML
     private GridPane gridNumbers;
@@ -38,7 +48,8 @@ public class RouletteController {
     @FXML
     private StackPane btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16,
             btn17, btn18, btn19, btn20, btn21, btn22, btn23, btn24, btn25, btn26, btn27, btn28, btn29, btn30, btn31, btn32,
-            btn33, btn34, btn35, btn36, btnBack, btnRules, btnSpin;
+            btn33, btn34, btn35, btn36, btnBack, btnRules, btnSpin, btn1st12, btn1to18, btnEVEN, btn2nd12, btn3rd12,
+            btnRedDiamond, btnBlackDiamond, btnODD, btn19to36, btn2to1bottom, btn2to1middle, btn2to1top;
 
     @FXML
     private ImageView img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16,
@@ -74,19 +85,17 @@ public class RouletteController {
 
     //loop through grid and add a stack pane with child image
     private void getGridButtons() {
-        //padding and size of grid pane units
-        gridNumbers.setPadding(new Insets(5, 5, 5, 5));
-        gridNumbers.setHgap(5);
-        gridNumbers.setVgap(5);
-
         for (int col = 0; col < 12; col++) {
             for (int row = 2; row >= 0; row--) {
                 StackPane stackPane = new StackPane();
                 ImageView imageView = new ImageView();
+
                 imageView.setFitHeight(46);
                 imageView.setFitWidth(46);
                 stackPane.getChildren().add(imageView);
+
                 gridNumbers.add(stackPane, col, row);
+
             }
         }
     }
@@ -173,235 +182,517 @@ public class RouletteController {
         //sets onClick functions to each dynamically generated button
         //Places chip on button when clicked
         btn1.setOnMouseClicked(event -> {
-            updateGridCell(img1, game.getCurrentChipInHand());
+            placeChip(btn1, img1, gameBoard.getChipValueInHand(), 1);
             System.out.println("btn1 clicked!");
         });
         btn2.setOnMouseClicked(event -> {
-            updateGridCell(img2, game.getCurrentChipInHand());
+            placeChip(btn2, img2, gameBoard.getChipValueInHand(), 2);
             System.out.println("btn2 clicked!");
         });
         btn3.setOnMouseClicked(event -> {
-            updateGridCell(img3, game.getCurrentChipInHand());
+            placeChip(btn3, img3, gameBoard.getChipValueInHand(), 3);
             System.out.println("btn3 clicked!");
         });
         btn4.setOnMouseClicked(event -> {
-            updateGridCell(img4, game.getCurrentChipInHand());
+            placeChip(btn4, img4, gameBoard.getChipValueInHand(), 4);
             System.out.println("btn4 clicked!");
         });
         btn5.setOnMouseClicked(event -> {
-            updateGridCell(img5, game.getCurrentChipInHand());
+            placeChip(btn5, img5, gameBoard.getChipValueInHand(), 5);
             System.out.println("btn5 clicked!");
         });
         btn6.setOnMouseClicked(event -> {
-            updateGridCell(img6, game.getCurrentChipInHand());
+            placeChip(btn6, img6, gameBoard.getChipValueInHand(), 6);
             System.out.println("btn6 clicked!");
         });
         btn7.setOnMouseClicked(event -> {
-            updateGridCell(img7, game.getCurrentChipInHand());
+            placeChip(btn7, img7, gameBoard.getChipValueInHand(), 7);
             System.out.println("btn7 clicked!");
         });
         btn8.setOnMouseClicked(event -> {
-            updateGridCell(img8, game.getCurrentChipInHand());
+            placeChip(btn8, img8, gameBoard.getChipValueInHand(), 8);
             System.out.println("btn8 clicked!");
         });
         btn9.setOnMouseClicked(event -> {
-            updateGridCell(img9, game.getCurrentChipInHand());
+            placeChip(btn9, img9, gameBoard.getChipValueInHand(), 9);
             System.out.println("btn9 clicked!");
         });
         btn10.setOnMouseClicked(event -> {
-            updateGridCell(img10, game.getCurrentChipInHand());
+            placeChip(btn10, img10, gameBoard.getChipValueInHand(), 10);
             System.out.println("btn10 clicked!");
         });
         btn11.setOnMouseClicked(event -> {
-            updateGridCell(img11, game.getCurrentChipInHand());
+            placeChip(btn11, img11, gameBoard.getChipValueInHand(), 11);
             System.out.println("btn11 clicked!");
         });
         btn12.setOnMouseClicked(event -> {
-            updateGridCell(img12, game.getCurrentChipInHand());
+            placeChip(btn12, img12, gameBoard.getChipValueInHand(), 12);
             System.out.println("btn12 clicked!");
         });
         btn13.setOnMouseClicked(event -> {
-            updateGridCell(img13, game.getCurrentChipInHand());
+            placeChip(btn13, img13, gameBoard.getChipValueInHand(), 13);
             System.out.println("btn13 clicked!");
         });
         btn14.setOnMouseClicked(event -> {
-            updateGridCell(img14, game.getCurrentChipInHand());
+            placeChip(btn14, img14, gameBoard.getChipValueInHand(), 14);
             System.out.println("btn14 clicked!");
         });
         btn15.setOnMouseClicked(event -> {
-            updateGridCell(img15, game.getCurrentChipInHand());
+            placeChip(btn15, img15, gameBoard.getChipValueInHand(), 15);
             System.out.println("btn15 clicked!");
         });
         btn16.setOnMouseClicked(event -> {
-            updateGridCell(img16, game.getCurrentChipInHand());
+            placeChip(btn16, img16, gameBoard.getChipValueInHand(), 16);
             System.out.println("btn16 clicked!");
         });
         btn17.setOnMouseClicked(event -> {
-            updateGridCell(img17, game.getCurrentChipInHand());
+            placeChip(btn17, img17, gameBoard.getChipValueInHand(), 17);
             System.out.println("btn17 clicked!");
         });
         btn18.setOnMouseClicked(event -> {
-            updateGridCell(img18, game.getCurrentChipInHand());
+            placeChip(btn18, img18, gameBoard.getChipValueInHand(), 18);
             System.out.println("btn18 clicked!");
         });
         btn19.setOnMouseClicked(event -> {
-            updateGridCell(img19, game.getCurrentChipInHand());
+            placeChip(btn19, img19, gameBoard.getChipValueInHand(), 19);
             System.out.println("btn19 clicked!");
         });
         btn20.setOnMouseClicked(event -> {
-            updateGridCell(img20, game.getCurrentChipInHand());
+            placeChip(btn20, img20, gameBoard.getChipValueInHand(), 20);
             System.out.println("btn20 clicked!");
         });
         btn21.setOnMouseClicked(event -> {
-            updateGridCell(img21, game.getCurrentChipInHand());
+            placeChip(btn21, img21, gameBoard.getChipValueInHand(), 21);
             System.out.println("btn21 clicked!");
         });
         btn22.setOnMouseClicked(event -> {
-            updateGridCell(img22, game.getCurrentChipInHand());
+            placeChip(btn22, img22, gameBoard.getChipValueInHand(), 22);
             System.out.println("btn22 clicked!");
         });
         btn23.setOnMouseClicked(event -> {
-            updateGridCell(img23, game.getCurrentChipInHand());
+            placeChip(btn23, img23, gameBoard.getChipValueInHand(), 23);
             System.out.println("btn23 clicked!");
         });
         btn24.setOnMouseClicked(event -> {
-            updateGridCell(img24, game.getCurrentChipInHand());
+            placeChip(btn24, img24, gameBoard.getChipValueInHand(), 24);
             System.out.println("btn24 clicked!");
         });
         btn25.setOnMouseClicked(event -> {
-            updateGridCell(img25, game.getCurrentChipInHand());
+            placeChip(btn25, img25, gameBoard.getChipValueInHand(), 25);
             System.out.println("btn25 clicked!");
         });
         btn26.setOnMouseClicked(event -> {
-            updateGridCell(img26, game.getCurrentChipInHand());
+            placeChip(btn26, img26, gameBoard.getChipValueInHand(), 26);
             System.out.println("btn26 clicked!");
         });
         btn27.setOnMouseClicked(event -> {
-            updateGridCell(img27, game.getCurrentChipInHand());
+            placeChip(btn27, img27, gameBoard.getChipValueInHand(), 27);
             System.out.println("btn27 clicked!");
         });
         btn28.setOnMouseClicked(event -> {
-            updateGridCell(img28, game.getCurrentChipInHand());
+            placeChip(btn28, img28, gameBoard.getChipValueInHand(), 28);
             System.out.println("btn28 clicked!");
         });
         btn29.setOnMouseClicked(event -> {
-            updateGridCell(img29, game.getCurrentChipInHand());
+            placeChip(btn29, img29, gameBoard.getChipValueInHand(), 29);
             System.out.println("btn29 clicked!");
         });
         btn30.setOnMouseClicked(event -> {
-            updateGridCell(img30, game.getCurrentChipInHand());
+            placeChip(btn30, img30, gameBoard.getChipValueInHand(), 30);
             System.out.println("btn30 clicked!");
         });
         btn31.setOnMouseClicked(event -> {
-            updateGridCell(img31, game.getCurrentChipInHand());
+            placeChip(btn31, img31, gameBoard.getChipValueInHand(), 31);
             System.out.println("btn31 clicked!");
         });
         btn32.setOnMouseClicked(event -> {
-            updateGridCell(img32, game.getCurrentChipInHand());
+            placeChip(btn32, img32, gameBoard.getChipValueInHand(), 32);
             System.out.println("btn32 clicked!");
         });
         btn33.setOnMouseClicked(event -> {
-            updateGridCell(img33, game.getCurrentChipInHand());
+            placeChip(btn33, img33, gameBoard.getChipValueInHand(), 33);
             System.out.println("btn33 clicked!");
         });
         btn34.setOnMouseClicked(event -> {
-            updateGridCell(img34, game.getCurrentChipInHand());
+            placeChip(btn34, img34, gameBoard.getChipValueInHand(), 34);
             System.out.println("btn34 clicked!");
         });
         btn35.setOnMouseClicked(event -> {
-            updateGridCell(img35, game.getCurrentChipInHand());
+            placeChip(btn35, img35, gameBoard.getChipValueInHand(), 35);
             System.out.println("btn35 clicked!");
         });
         btn36.setOnMouseClicked(event -> {
-            updateGridCell(img36, game.getCurrentChipInHand());
             System.out.println("btn36 clicked!");
+            placeChip(btn36, img36, gameBoard.getChipValueInHand(), 36);
         });
+    }
+
+    //Places chip on roulette table
+    private void placeChip(StackPane pane, ImageView img, int chipValueInHand, int cellID) {
+        if(gameBoard.getChipValueInHand() != 0) {
+            if (gameBoard.cells[cellID - 1].getChipValue() == 0) {
+                gameBoard.cells[cellID - 1].setHasChip(true);
+                gameBoard.cells[cellID - 1].setChipValue(chipValueInHand);
+                System.out.println(gameBoard.cells[cellID - 1]);
+
+                switch (chipValueInHand) {
+                    case 1:
+                        setImage(img, 0, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 5:
+                        setImage(img, 1, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 10:
+                        setImage(img, 2, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 20:
+                        setImage(img, 3, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 50:
+                        setImage(img, 4, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 100:
+                        setImage(img, 5, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 500:
+                        setImage(img, 6, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 1000:
+                        setImage(img, 7, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 5000:
+                        setImage(img, 8, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                }
+                txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
+            } else if (gameBoard.cells[cellID - 1].getChipValue() > 0) {
+                returnMoneyUpdateDisplay(gameBoard.cells[cellID - 1].getChipValue());
+                gameBoard.cells[cellID - 1].setChipValue(0);
+
+
+                //voids chip image
+                setImage(img, 10, pane);
+            }
+        } else {
+            System.out.println("No Chip in Hand");
+        }
+    }
+
+    private void placeChipOnSpecials(StackPane pane, ImageView img, int chipValueInHand, int cellID) {
+        if(gameBoard.getChipValueInHand() != 0) {
+            if (gameBoard.specialCells[cellID].getChipValue() == 0) {
+                gameBoard.specialCells[cellID].setHasChip(true);
+                gameBoard.specialCells[cellID].setChipValue(chipValueInHand);
+                System.out.println(gameBoard.specialCells[cellID]);
+
+                switch (chipValueInHand) {
+                    case 1:
+                        setImage(img, 0, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 5:
+                        setImage(img, 1, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 10:
+                        setImage(img, 2, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 20:
+                        setImage(img, 3, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 50:
+                        setImage(img, 4, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 100:
+                        setImage(img, 5, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 500:
+                        setImage(img, 6, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 1000:
+                        setImage(img, 7, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                    case 5000:
+                        setImage(img, 8, pane);
+                        Player.setChipMoney(Player.getChipMoney() - chipValueInHand);
+                        break;
+                }
+                txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
+            } else if (gameBoard.specialCells[cellID].getChipValue() > 0) {
+                System.out.println(gameBoard.specialCells[cellID].getChipValue());
+                returnMoneyUpdateDisplay(gameBoard.specialCells[cellID].getChipValue());
+                gameBoard.specialCells[cellID].setChipValue(0);
+
+
+                //voids chip image
+                setImage(img, 10, pane);
+            }
+        } else {
+            System.out.println("No Chip in Hand");
+        }
+
+    }
+
+
+    private void returnMoneyUpdateDisplay(int chipValue) {
+        Player.setChipMoney(Player.getChipMoney() + chipValue);
+        txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
+    }
+
+    private void setImage(ImageView img, int imageId, StackPane pane) {
+        if (img.getImage() == null) {
+            img.setImage(chipImage[imageId]);
+            //BorderWidths borderWidths = new BorderWidths(2, 2, 2, 2);
+            //pane.setBorder(new Border(new BorderStroke(Color.YELLOW, BorderStrokeStyle.SOLID, CornerRadii.EMPTY, borderWidths)));
+        } else if (img.getImage() != null) {
+            img.setImage(null);
+            //BorderWidths borderWidths = new BorderWidths(2, 2, 2, 2);
+            pane.setBorder(null);
+        }
+    }
+
+
+    //Check if grid cell has chip already,
+    private boolean checkIfCellHasImage(ImageView img) {
+        boolean hasImage = false;
+        if (img.getImage() == null) {
+            hasImage = false;
+            return hasImage;
+        } else if (img.getImage() != null) {
+            hasImage = true;
+            return hasImage;
+        }
+        return hasImage;
+    }
+
+    //
+    //This function spins the wheel
+    @FXML
+    void onSpin(MouseEvent event) {
+        SpinResult newSpin = gameBoard.SpinWheel();
+
+        //Spin Wheel
+        ////////////////////
+        System.out.println("Wheel is spinning");
+        System.out.println(newSpin);
+
+        //Set spin wheel animation time
+        Random random = new Random();
+        int spinDuration = random.nextInt(3, 5); // generates a random number between 3 and 5
+
+        //create timeline
+        Timeline timeline = new Timeline();
+        timeline.getKeyFrames().addAll(
+                //set animations
+                new KeyFrame(Duration.ZERO, new KeyValue(imgWheel.rotateProperty(), 0)),
+                new KeyFrame(Duration.seconds(spinDuration), new KeyValue(imgWheel.rotateProperty(), 360))
+        );
+        //starts animation
+        timeline.play();
+        ////////////////////
+        //updateResults after finishing timeline
+        timeline.setOnFinished(e -> updateCircleColorAndNumber(newSpin));
+
+
+    }
+
+    //sets color of circle to roll result color
+    private void updateCircleColorAndNumber(SpinResult spin) {
+        switch (spin.getColor()) {
+            case "green":
+                circleResultColor.setFill(Color.GREEN);
+                txtResultNumber.setText(String.valueOf(spin.getNumber()));
+                break;
+            case "red":
+                circleResultColor.setFill(Color.RED);
+                txtResultNumber.setText(String.valueOf(spin.getNumber()));
+                break;
+            case "black":
+                circleResultColor.setFill(Color.BLACK);
+                txtResultNumber.setText(String.valueOf(spin.getNumber()));
+                break;
+        }
+
+        circleResultColor.setVisible(true);
+        txtResultNumber.setVisible(true);
+
+        int payout = gameBoard.checkWinnerPayout(spin);
+        payoutWinnings(payout);
+        resetChipsOnBoard();
+    }
+
+    private void checkWinningTile(SpinResult spin) {
+
+    }
+
+    //Checks every tile, if roleNumber or any boolean value (red,black,1st12, etc is true) and
+    //chipPos has a chip, payout to player.
+    private void checkWinner(SpinResult spin) {
+        //Win condition 0-36
+
+
+        //after paying out, reset board
+        resetChipsOnBoard();
+    }
+
+    //Gets chips value from image
+    private int getChipsValue(ImageView img) {
+        int temp = 0;
+        if (img.getImage() == chipImage[0]) {
+            temp = 1;
+        } else if (img.getImage() == chipImage[1]) {
+            temp = 5;
+        } else if (img.getImage() == chipImage[2]) {
+            temp = 10;
+        } else if (img.getImage() == chipImage[3]) {
+            temp = 20;
+        } else if (img.getImage() == chipImage[4]) {
+            temp = 50;
+        } else if (img.getImage() == chipImage[5]) {
+            temp = 100;
+        } else if (img.getImage() == chipImage[6]) {
+            temp = 500;
+        } else if (img.getImage() == chipImage[7]) {
+            temp = 1000;
+        } else if (img.getImage() == chipImage[8]) {
+            temp = 5000;
+        }
+        System.out.println(temp);
+        return temp;
+    }
+
+    //Pays out winnings
+    private void payoutWinnings(int payout) {
+        Player.setChipMoney(Player.getChipMoney() + payout);
+        txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
+    }
+
+    //This button goes back a page to game selection
+    @FXML
+    protected void onBackPage(MouseEvent event) throws IOException {
+        ChangeScene.changeScene(event, "chooseGameView.fxml");
+    }
+
+
+    //This function opens a rule window
+    @FXML
+    void onRules(MouseEvent event1) {
+        if (!displayRules) {
+            // Create the TextArea and set rulesVisible to true
+            rulesTextArea = new TextArea("Payouts based on Bet/Result:\n" +
+                    "\n" +
+                    "    Red/Black - 1:1\n" +
+                    "    Odd/Even - 1:1\n" +
+                    "    High/Low - 1:1\n" +
+                    "    Dozen - 2:1\n" +
+                    "    Column - 2:1\n" +
+                    "    Square Number (4-Number) - 8:1\n" +
+                    "    Split Number (2-Number) - 17:1\n" +
+                    "    Straight Number (1-Number) - 35:1\n");
+            rulesTextArea.setPrefSize(600, 600);
+            rulesTextArea.setEditable(false);
+            rulesTextArea.setLayoutX((rootPane.getWidth() - rulesTextArea.getPrefWidth()) / 2);
+            rulesTextArea.setLayoutY((rootPane.getHeight() - rulesTextArea.getPrefHeight()) / 2);
+            rootPane.getChildren().add(rulesTextArea);
+            displayRules = true;
+        } else {
+            // Delete the TextArea and set rulesVisible to false
+            rootPane.getChildren().remove(rulesTextArea);
+            displayRules = false;
+        }
     }
 
     @FXML
     void onZero(MouseEvent event) {
-        updateGridCell(img0, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn0, img0, gameBoard.getChipValueInHand(), 0);
         System.out.println("btn0 clicked!");
     }
 
     @FXML
     void onBlack(MouseEvent event) {
-        updateGridCell(imgBlackDiamond, game.getCurrentChipInHand());
+        placeChipOnSpecials(btnBlackDiamond, imgBlackDiamond, gameBoard.getChipValueInHand(), 4);
         System.out.println("btnBlackDiamond clicked!");
     }
 
     @FXML
     void onEven(MouseEvent event) {
-        updateGridCell(imgEVEN, game.getCurrentChipInHand());
+        placeChipOnSpecials(btnEVEN, imgEVEN, gameBoard.getChipValueInHand(), 6);
         System.out.println("btnEven clicked!");
     }
 
     @FXML
     void onOdd(MouseEvent event) {
-        updateGridCell(imgODD, game.getCurrentChipInHand());
+        placeChipOnSpecials(btnODD, imgODD, gameBoard.getChipValueInHand(), 5);
         System.out.println("btnOdd clicked!");
     }
 
     @FXML
     void onRed(MouseEvent event) {
-        updateGridCell(imgRedDiamond, game.getCurrentChipInHand());
+        placeChipOnSpecials(btnRedDiamond, imgRedDiamond, gameBoard.getChipValueInHand(), 3);
         System.out.println("btnRedDiamond clicked!");
     }
 
     @FXML
     void on19to36(MouseEvent event) {
-        updateGridCell(img19to36, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn19to36, img19to36, gameBoard.getChipValueInHand(), 2);
         System.out.println("btn19to36 clicked!");
     }
 
     @FXML
     void on1st12(MouseEvent event) {
-        updateGridCell(img1st12, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn1st12, img1st12, gameBoard.getChipValueInHand(), 7);
         System.out.println("btn1st12 clicked!");
     }
 
     @FXML
     void on1to18(MouseEvent event) {
-        updateGridCell(img1to18, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn1to18, img1to18, gameBoard.getChipValueInHand(), 1);
         System.out.println("btn1to18 clicked!");
     }
 
     @FXML
     void on2nd12(MouseEvent event) {
-        updateGridCell(img2nd12, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn2nd12, img2nd12, gameBoard.getChipValueInHand(), 8);
         System.out.println("btn2nd12 clicked!");
     }
 
     @FXML
     void on2to1bot(MouseEvent event) {
-        updateGridCell(img2to1bottom, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn2to1bottom, img2to1bottom, gameBoard.getChipValueInHand(), 12);
         System.out.println("btn2to1bottom clicked!");
     }
 
     @FXML
     void on2to1mid(MouseEvent event) {
-        updateGridCell(img2to1middle, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn2to1middle, img2to1middle, gameBoard.getChipValueInHand(), 11);
         System.out.println("btn2to1middle clicked!");
     }
 
     @FXML
     void on2to1top(MouseEvent event) {
-        updateGridCell(img2to1top, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn2to1top, img2to1top, gameBoard.getChipValueInHand(), 10);
         System.out.println("btn2to1top clicked!");
     }
 
     @FXML
     void on3rd12(MouseEvent event) {
-        updateGridCell(img3rd12, game.getCurrentChipInHand());
+        placeChipOnSpecials(btn3rd12, img3rd12, gameBoard.getChipValueInHand(), 9);
         System.out.println("btn3rd12 clicked!");
-    }
-
-    //These buttons are used for changing the bet amount
-    @FXML
-    void betFifty(MouseEvent event) {
-        resetArrows();
-        imgArrowMarker50.setVisible(true);
-        game.setCurrentChipInHand(50);
     }
 
     //Gets chip images from resources
@@ -482,7 +773,17 @@ public class RouletteController {
         imgBlackDiamond.setImage(null);
         imgODD.setImage(null);
         imgEVEN.setImage(null);
+
+        for(Cell cell : gameBoard.cells) {
+            cell.setChipValue(0);
+            cell.setHasChip(false);
+        }
+        for(Cell cell : gameBoard.specialCells) {
+            cell.setChipValue(0);
+            cell.setHasChip(false);
+        }
     }
+
     //sets arrows to invisible
     private void resetArrows() {
         imgArrowMarker1.setVisible(false);
@@ -496,431 +797,68 @@ public class RouletteController {
         imgArrowMarker5k.setVisible(false);
     }
 
+    //These buttons are used for changing the bet amount
+    @FXML
+    void betFifty(MouseEvent event) {
+        resetArrows();
+        imgArrowMarker50.setVisible(true);
+        gameBoard.setChipValueInHand(50);
+    }
+
+
     @FXML
     void betFive(MouseEvent event) {
         resetArrows();
         imgArrowMarker5.setVisible(true);
-        game.setCurrentChipInHand(5);
+        gameBoard.setChipValueInHand(5);
     }
 
     @FXML
     void betFiveHundred(MouseEvent event) {
         resetArrows();
         imgArrowMarker500.setVisible(true);
-        game.setCurrentChipInHand(500);
+        gameBoard.setChipValueInHand(500);
     }
 
     @FXML
     void betFiveThousand(MouseEvent event) {
         resetArrows();
         imgArrowMarker5k.setVisible(true);
-        game.setCurrentChipInHand(5000);
+        gameBoard.setChipValueInHand(5000);
     }
 
     @FXML
     void betOne(MouseEvent event) {
         resetArrows();
         imgArrowMarker1.setVisible(true);
-        game.setCurrentChipInHand(1);
+        gameBoard.setChipValueInHand(1);
     }
 
     @FXML
     void betOneHundred(MouseEvent event) {
         resetArrows();
         imgArrowMarker100.setVisible(true);
-        game.setCurrentChipInHand(100);
+        gameBoard.setChipValueInHand(100);
     }
 
     @FXML
     void betOneThousand(MouseEvent event) {
         resetArrows();
         imgArrowMarker1k.setVisible(true);
-        game.setCurrentChipInHand(1000);
+        gameBoard.setChipValueInHand(1000);
     }
 
     @FXML
     void betTen(MouseEvent event) {
         resetArrows();
         imgArrowMarker10.setVisible(true);
-        game.setCurrentChipInHand(10);
+        gameBoard.setChipValueInHand(10);
     }
 
     @FXML
     void betTwenty(MouseEvent event) {
         resetArrows();
         imgArrowMarker20.setVisible(true);
-        game.setCurrentChipInHand(20);
+        gameBoard.setChipValueInHand(20);
     }
-
-    //Check if grid cell has chip already,
-    private boolean checkIfCellHasImage(ImageView img) {
-        boolean b = false;
-        if(img.getImage() == null) {
-            b = false;
-            return b;
-        } else if (img.getImage() != null) {
-            b = true;
-            return b;
-        }
-        return b;
-    }
-
-    //Sets or moves image from grid
-    private void setGridImage(ImageView img, int id) {
-        if(!checkIfCellHasImage(img)) {
-            img.setImage(chipImage[id]);
-        } else {
-            img.setImage(null);
-        }
-    }
-
-    //if grid doesn't have image, sets it, else removes it
-    private void updateGridCell(ImageView img, int chipInHand) {
-        if(chipInHand < Player.getChipMoney() && img.getImage() == null) {
-            switch (chipInHand) {
-                case 1:
-                    setGridImage(img, 0);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 5:
-                    setGridImage(img, 1);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 10:
-                    setGridImage(img, 2);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 20:
-                    setGridImage(img, 3);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 50:
-                    setGridImage(img, 4);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 100:
-                    setGridImage(img, 5);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 500:
-                    setGridImage(img, 6);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 1000:
-                    setGridImage(img, 7);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 5000:
-                    setGridImage(img, 8);
-                    Player.setChipMoney(Player.getChipMoney() - chipInHand);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-            }
-
-        //    else removes chipImage from cell
-        } else if (img.getImage() != null) {
-            int chipValue = getChipsValue(img);
-            switch (chipValue) {
-                case 1:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 5:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 10:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 20:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 50:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 100:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 500:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 1000:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-                case 5000:
-                    Player.setChipMoney(Player.getChipMoney() + chipValue);
-                    txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-                    break;
-            }
-            //voids chip image
-            setGridImage(img, 10);
-        }
-    }
-
-
-    //This function spins the wheel
-    @FXML
-    void onSpin(MouseEvent event) {
-
-        //Spin Wheel
-        ////////////////////
-        System.out.println("Wheel is spinning");
-        game.setRoleNumber();
-        Random random = new Random();
-        int spinDuration = random.nextInt(3, 5); // generates a random number between 3 and 5
-
-        Timeline timeline = new Timeline();
-        timeline.getKeyFrames().addAll(
-                new KeyFrame(Duration.ZERO, new KeyValue(imgWheel.rotateProperty(), 0)),
-                new KeyFrame(Duration.seconds(spinDuration), new KeyValue(imgWheel.rotateProperty(), 360))
-        );
-        timeline.play();
-        ////////////////////
-        //updateResults after finishing time loop
-        timeline.setOnFinished(e -> updateResult(game.isBlack(), game.isRed(), game.isGreen(), game.getRoleNumber()));
-
-    }
-
-    //sets color of circle to roll result color
-    private void updateResult(boolean black, boolean red, boolean green, int role) {
-        if (green) {
-            circleResultColor.setFill(Color.GREEN);
-            txtResultNumber.setText(String.valueOf(role));
-        } else if (red) {
-            circleResultColor.setFill(Color.RED);
-            txtResultNumber.setText(String.valueOf(role));
-        } else if (black) {
-            circleResultColor.setFill(Color.BLACK);
-            txtResultNumber.setText(String.valueOf(role));
-        }
-        circleResultColor.setVisible(true);
-        txtResultNumber.setVisible(true);
-
-        //checks winner immediately after
-        checkWinner(game.getRoleNumber());
-    }
-
-    //Checks every tile, if roleNumber or any boolean value (red,black,1st12, etc is true) and
-    //chipPos has a chip, payout to player.
-    private void checkWinner(int roleNumber) {
-        System.out.println(roleNumber);
-        //Win codition 0-36
-        if(checkIfCellHasImage(img0) && roleNumber == 0) {
-            payoutWinnings(35, getChipsValue(img0));
-        }
-        if(checkIfCellHasImage(img1) && roleNumber == 1) {
-            payoutWinnings(35, getChipsValue(img1));
-        }
-        if(checkIfCellHasImage(img2) && roleNumber == 2) {
-            payoutWinnings(35, getChipsValue(img2));
-        }
-        if(checkIfCellHasImage(img3) && roleNumber == 3) {
-            payoutWinnings(35, getChipsValue(img3));
-        }
-        if(checkIfCellHasImage(img4) && roleNumber == 4) {
-            payoutWinnings(35, getChipsValue(img4));
-        }
-        if(checkIfCellHasImage(img5) && roleNumber == 5) {
-            payoutWinnings(35, getChipsValue(img5));
-        }
-        if(checkIfCellHasImage(img6) && roleNumber == 6) {
-            payoutWinnings(35, getChipsValue(img6));
-        }
-        if(checkIfCellHasImage(img7) && roleNumber == 7) {
-            payoutWinnings(35, getChipsValue(img7));
-        }
-        if(checkIfCellHasImage(img8) && roleNumber == 8) {
-            payoutWinnings(35, getChipsValue(img8));
-        }
-        if(checkIfCellHasImage(img9) && roleNumber == 9) {
-            payoutWinnings(35, getChipsValue(img9));
-        }
-        if(checkIfCellHasImage(img10) && roleNumber == 10) {
-            payoutWinnings(35, getChipsValue(img10));
-        }
-        if(checkIfCellHasImage(img11) && roleNumber == 11) {
-            payoutWinnings(35, getChipsValue(img11));
-        }
-        if(checkIfCellHasImage(img12) && roleNumber == 12) {
-            payoutWinnings(35, getChipsValue(img12));
-        }
-        if(checkIfCellHasImage(img13) && roleNumber == 13) {
-            payoutWinnings(35, getChipsValue(img13));
-        }
-        if(checkIfCellHasImage(img14) && roleNumber == 14) {
-            payoutWinnings(35, getChipsValue(img14));
-        }
-        if(checkIfCellHasImage(img15) && roleNumber == 15) {
-            payoutWinnings(35, getChipsValue(img15));
-        }
-        if(checkIfCellHasImage(img16) && roleNumber == 16) {
-            payoutWinnings(35, getChipsValue(img16));
-        }
-        if(checkIfCellHasImage(img17) && roleNumber == 17) {
-            payoutWinnings(35, getChipsValue(img17));
-        }
-        if(checkIfCellHasImage(img18) && roleNumber == 18) {
-            payoutWinnings(35, getChipsValue(img18));
-        }
-        if(checkIfCellHasImage(img19) && roleNumber == 19) {
-            payoutWinnings(35, getChipsValue(img19));
-        }
-        if(checkIfCellHasImage(img20) && roleNumber == 20) {
-            payoutWinnings(35, getChipsValue(img20));
-        }
-        if(checkIfCellHasImage(img21) && roleNumber == 21) {
-            payoutWinnings(35, getChipsValue(img21));
-        }
-        if(checkIfCellHasImage(img22) && roleNumber == 22) {
-            payoutWinnings(35, getChipsValue(img22));
-        }
-        if(checkIfCellHasImage(img23) && roleNumber == 23) {
-            payoutWinnings(35, getChipsValue(img23));
-        }
-        if(checkIfCellHasImage(img24) && roleNumber == 24) {
-            payoutWinnings(35, getChipsValue(img24));
-        }
-        if(checkIfCellHasImage(img25) && roleNumber == 25) {
-            payoutWinnings(35, getChipsValue(img25));
-        }
-        if(checkIfCellHasImage(img26) && roleNumber == 26) {
-            payoutWinnings(35, getChipsValue(img26));
-        }
-        if(checkIfCellHasImage(img27) && roleNumber == 27) {
-            payoutWinnings(35, getChipsValue(img27));
-        }
-        if(checkIfCellHasImage(img28) && roleNumber == 28) {
-            payoutWinnings(35, getChipsValue(img28));
-        }
-        if(checkIfCellHasImage(img29) && roleNumber == 29) {
-            payoutWinnings(35, getChipsValue(img29));
-        }
-        if(checkIfCellHasImage(img30) && roleNumber == 30) {
-            payoutWinnings(35, getChipsValue(img30));
-        }
-        if(checkIfCellHasImage(img31) && roleNumber == 31) {
-            payoutWinnings(35, getChipsValue(img31));
-        }
-        if(checkIfCellHasImage(img32) && roleNumber == 32) {
-            payoutWinnings(35, getChipsValue(img32));
-        }
-        if(checkIfCellHasImage(img33) && roleNumber == 33) {
-            payoutWinnings(35, getChipsValue(img33));
-        }
-        if(checkIfCellHasImage(img34) && roleNumber == 34) {
-            payoutWinnings(35, getChipsValue(img34));
-        }
-        if(checkIfCellHasImage(img35) && roleNumber == 35) {
-            payoutWinnings(35, getChipsValue(img35));
-        }
-        if(checkIfCellHasImage(img36) && roleNumber == 36) {
-            payoutWinnings(35, getChipsValue(img36));
-        }
-        ///////////////////////////////////////////////////
-        //Special Win conditions
-
-        if(checkIfCellHasImage(img1st12) && game.isFirst12()) {
-            payoutWinnings(2, getChipsValue(img1st12));
-        }
-        if(checkIfCellHasImage(img2nd12) && game.isSecond12()) {
-            payoutWinnings(2, getChipsValue(img2nd12));
-        }
-        if(checkIfCellHasImage(img3rd12) && game.isThird12()) {
-            payoutWinnings(2, getChipsValue(img3rd12));
-        }
-        if(checkIfCellHasImage(img2to1top) && game.isTop12()) {
-            payoutWinnings(2, getChipsValue(img2to1top));
-        }
-        if(checkIfCellHasImage(img2to1middle) && game.isMiddle12()) {
-            payoutWinnings(2, getChipsValue(img2to1middle));
-        }
-        if(checkIfCellHasImage(img2to1bottom) && game.isBottom12()) {
-            payoutWinnings(2, getChipsValue(img2to1bottom));
-        }
-
-
-        //
-        if(checkIfCellHasImage(img1to18) && game.isFirstHalf()) {
-            payoutWinnings(1, getChipsValue(img1to18));
-        }
-        if(checkIfCellHasImage(img19to36) && !game.isFirstHalf()) {
-            payoutWinnings(1, getChipsValue(img19to36));
-        }
-        if(checkIfCellHasImage(imgRedDiamond) && game.isRed()) {
-            payoutWinnings(1, getChipsValue(imgRedDiamond));
-        }
-        if(checkIfCellHasImage(imgBlackDiamond) && game.isBlack()) {
-            payoutWinnings(1, getChipsValue(imgBlackDiamond));
-        }
-        if(checkIfCellHasImage(imgEVEN) && game.isEven()) {
-            payoutWinnings(1, getChipsValue(imgEVEN));
-        }
-        if(checkIfCellHasImage(imgODD) && !game.isEven()) {
-            payoutWinnings(1, getChipsValue(imgODD));
-        }
-
-        //after paying out, reset board
-        resetChipsOnBoard();
-    }
-
-    //Gets chips value from image
-    private int getChipsValue(ImageView img) {
-        int temp = 0;
-        if(img.getImage() == chipImage[0]) {
-            temp = 1;
-        } else if(img.getImage() == chipImage[1]) {
-            temp = 5;
-        } else if(img.getImage() == chipImage[2]) {
-            temp = 10;
-        } else if(img.getImage() == chipImage[3]) {
-            temp = 20;
-        } else if(img.getImage() == chipImage[4]) {
-            temp = 50;
-        } else if(img.getImage() == chipImage[5]) {
-            temp = 100;
-        } else if(img.getImage() == chipImage[6]) {
-            temp = 500;
-        } else if(img.getImage() == chipImage[7]) {
-            temp = 1000;
-        } else if(img.getImage() == chipImage[8]) {
-            temp = 5000;
-        }
-        System.out.println(temp);
-        return temp;
-    }
-
-    //Pays out winnings
-    private void payoutWinnings(int payout, int chipValue) {
-        int winnings = ((chipValue * payout) + chipValue);
-        Player.setChipMoney(Player.getChipMoney() + winnings);
-        txtChipsAmount.setText(FormatMoney.Format(Player.getChipMoney()));
-    }
-
-    //This button goes back a page to game selection
-    @FXML
-    protected void onBackPage(MouseEvent event) throws IOException {
-        ChangeScene.changeScene(event, "chooseGameView.fxml");
-    }
-
-
-    //This function opens a rule window
-    @FXML
-    void onRules(MouseEvent event) {
-
-    }
-
 }

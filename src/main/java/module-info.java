@@ -11,4 +11,6 @@ module pokemon.masters.casinosimulator2 {
     opens pokemon.masters.casinosimulator.gamelogic to javafx.fxml;
     exports pokemon.masters.casinosimulator.services;
     opens pokemon.masters.casinosimulator.services to javafx.fxml;
+    exports pokemon.masters.casinosimulator.gamelogic.Roulette;
+    opens pokemon.masters.casinosimulator.gamelogic.Roulette to javafx.fxml;
 }

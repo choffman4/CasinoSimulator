@@ -1,9 +1,11 @@
-package pokemon.masters.casinosimulator.gamelogic;
+package pokemon.masters.casinosimulator.gamelogic.Roulette;
 
 import java.util.Random;
 
 public class Roulette {
     Random random = new Random();
+
+    public RouletteBoard board = new RouletteBoard();
 
     //selected chip indicated by the arrow
     private int currentChipInHand;
@@ -13,6 +15,9 @@ public class Roulette {
     private boolean red;
     private boolean green;
     private boolean black;
+
+    private String color;
+
     private boolean even;
     private boolean odd;
 
@@ -25,6 +30,7 @@ public class Roulette {
     private boolean top12;
     private boolean middle12;
     private boolean bottom12;
+    //////////////////////////////////
 
     public int getCurrentChipInHand() {
         return currentChipInHand;
@@ -150,7 +156,6 @@ public class Roulette {
                 || rand == 15 || rand == 17 || rand == 19 || rand == 21 || rand == 23 || rand == 25 || rand == 27
                 || rand == 29 || rand == 31 || rand == 33 || rand == 35) {
             setEven(false);
-            setEven(true);
             setRed(true);
             setBlack(false);
             setGreen(false);
@@ -161,8 +166,8 @@ public class Roulette {
             setEven(true);
             setOdd(false);
             setRed(false);
-            setBlack(true);
-            setGreen(false);
+            //setBlack(true);
+            //setGreen(false);
         }
 
         if (rand == 1 || rand == 4 || rand == 7 || rand == 10 || rand == 13 || rand == 16 || rand == 19 || rand == 22
