@@ -1,12 +1,18 @@
 package pokemon.masters.casinosimulator.controllers;
 
 
+import javafx.animation.AnimationTimer;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.util.Duration;
+import pokemon.masters.casinosimulator.gamelogic.slotmachine.SlotMachine;
 import pokemon.masters.casinosimulator.services.ChangeScene;
 
 import java.io.FileInputStream;
@@ -18,6 +24,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SlotMachineController {
 
+    SlotMachine slots = new SlotMachine();
+
     protected ArrayList<Image> slotImages = new ArrayList<>();
 
     @FXML
@@ -25,6 +33,7 @@ public class SlotMachineController {
 //        slotImages.clear();
 
         try {
+            // adds all the images to slot images array on start, this is to be able to display and grab easily
             InputStream banana = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelBanana.png");
             Image imgBanana = new Image(banana);
             slotImages.add(imgBanana);
@@ -60,8 +69,6 @@ public class SlotMachineController {
             InputStream seven = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelSeven.png");
             Image imgSeven = new Image(seven);
             slotImages.add(imgSeven);
-
-            System.out.println(slotImages);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -90,7 +97,12 @@ public class SlotMachineController {
 
     @FXML
     void onSpin(MouseEvent event) {
+        // grab random image for the fxml
+        Image slot1 = slotImages.get(slots.randNum());
+        Image slot2 = slotImages.get(slots.randNum());
+        Image slot3 = slotImages.get(slots.randNum());
 
+        slots.slotAnimationTimer(imgSlot1, imgSlot2, imgSlot3, slotImages);
     }
 
     @FXML
@@ -137,15 +149,4 @@ public class SlotMachineController {
     void betTwenty(MouseEvent event) {
 
     }
-
-    public int randNum() {
-
-        return ThreadLocalRandom.current().nextInt(0, 4);
-    }
-
-    public boolean randTF() {
-
-        return ThreadLocalRandom.current().nextBoolean();
-    }
-
 }
