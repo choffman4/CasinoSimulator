@@ -193,58 +193,59 @@ public class RouletteBoard {
 
     public int checkWinnerPayout(SpinResult spin) {
         int payoutMultiplier = 0;
+        int specialChipsValue = 0;
         int chipsValue = 0;
         if(spin.getNumber() == 0 && specialCells[0].isHasChip()) {
-            chipsValue += specialCells[0].getChipValue();
+            specialChipsValue += specialCells[0].getChipValue();
             payoutMultiplier = 36;
         }
         ////Special Win conditions
         if(spin.isEven() && specialCells[6].isHasChip()) {
-            chipsValue += specialCells[6].getChipValue();
+            specialChipsValue += specialCells[6].getChipValue();
             payoutMultiplier = specialCells[6].getPayOut();
         }
         if(spin.isEven() == false && specialCells[5].isHasChip()) {
-            chipsValue += specialCells[5].getChipValue();
+            specialChipsValue += specialCells[5].getChipValue();
             payoutMultiplier = specialCells[5].getPayOut();
         }
         if(spin.getColor().equals("red") && specialCells[3].isHasChip()) {
-            chipsValue += specialCells[3].getChipValue();
+            specialChipsValue += specialCells[3].getChipValue();
             payoutMultiplier = specialCells[3].getPayOut();
         }
         if(spin.getColor().equals("black") && specialCells[4].isHasChip()) {
-            chipsValue += specialCells[4].getChipValue();
+            specialChipsValue += specialCells[4].getChipValue();
             payoutMultiplier = specialCells[4].getPayOut();
         }
         if(spin.isFirstHalf() && specialCells[1].isHasChip()) {
-            chipsValue += specialCells[1].getChipValue();
+            specialChipsValue += specialCells[1].getChipValue();
             payoutMultiplier = specialCells[1].getPayOut();
         }
         if(spin.isFirstHalf() == false && specialCells[2].isHasChip()) {
-            chipsValue += specialCells[2].getChipValue();
+            specialChipsValue += specialCells[2].getChipValue();
             payoutMultiplier = specialCells[2].getPayOut();
         }
         if(spin.getColumn() <= 3 && spin.getColumn() >= 0 && specialCells[7].isHasChip()) {
-            chipsValue += specialCells[7].getChipValue();
+            specialChipsValue += specialCells[7].getChipValue();
             payoutMultiplier = specialCells[7].getPayOut();
         }
         if(spin.getColumn() <= 7 && spin.getColumn() >= 4 && specialCells[8].isHasChip()) {
-            chipsValue += specialCells[8].getChipValue();
+            specialChipsValue += specialCells[8].getChipValue();
             payoutMultiplier = specialCells[8].getPayOut();
         }
         if(spin.getColumn() <= 11 && spin.getColumn() >= 8 && specialCells[9].isHasChip()) {
-            chipsValue += specialCells[9].getChipValue();
+            specialChipsValue += specialCells[9].getChipValue();
             payoutMultiplier = specialCells[9].getPayOut();
         }
         if(spin.getRow() == 0 && specialCells[12].isHasChip()) {
-            chipsValue += specialCells[12].getChipValue();
+            specialChipsValue += specialCells[12].getChipValue();
             payoutMultiplier = specialCells[12].getPayOut();
         }
         if(spin.getRow() == 1 && specialCells[11].isHasChip()) {
-            chipsValue += specialCells[11].getChipValue();
+            specialChipsValue += specialCells[11].getChipValue();
             payoutMultiplier = specialCells[11].getPayOut();
         }
         if(spin.getRow() == 2 && specialCells[10].isHasChip()) {
-            chipsValue += specialCells[10].getChipValue();
+            specialChipsValue += specialCells[10].getChipValue();
             payoutMultiplier = specialCells[10].getPayOut();
         }
 
@@ -331,10 +332,12 @@ public class RouletteBoard {
             }
         }
 
-        System.out.println("chipValue here asdf asdf: " + chipsValue);
-        int totalReturn = payoutMultiplier * chipsValue + chipsValue;
+        int totalChipsValue = chipsValue + specialChipsValue;
 
-        System.out.println("Player wins: " + (totalReturn - chipsValue));
-        return totalReturn;
+        //System.out.println("chipValue: " + totalChipsValue);
+        int totalPayout = payoutMultiplier * totalChipsValue + totalChipsValue;
+
+        System.out.println("Player wins: " + (totalPayout - totalChipsValue));
+        return totalPayout;
     }
 }
