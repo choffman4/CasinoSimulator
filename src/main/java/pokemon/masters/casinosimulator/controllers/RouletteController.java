@@ -13,7 +13,6 @@ import javafx.scene.text.Text;
 import javafx.util.Duration;
 import pokemon.masters.casinosimulator.gamelogic.Player;
 import pokemon.masters.casinosimulator.gamelogic.Roulette.Cell;
-import pokemon.masters.casinosimulator.gamelogic.Roulette.Roulette;
 import pokemon.masters.casinosimulator.gamelogic.Roulette.RouletteBoard;
 import pokemon.masters.casinosimulator.gamelogic.Roulette.SpinResult;
 import pokemon.masters.casinosimulator.services.ChangeScene;
