@@ -5,13 +5,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SlotMachine {
 
     private long animationStart;
 
-    public long startTime;
+    private long startTime = 0;
 
     public long getAnimationStart() {
         return animationStart;
@@ -21,32 +22,17 @@ public class SlotMachine {
         this.animationStart = animationStart;
     }
 
+    public long getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
+    }
 
     public int randNum() {
 
         return ThreadLocalRandom.current().nextInt(0, 9);
-    }
-
-    public void slotAnimationTimer(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages) {
-        AnimationTimer tm = new AnimationTimer() {
-
-            @Override
-            public void handle(long now) {
-                if (startTime == 0) {
-                    startTime = now;
-                }
-
-                long elapsedTime = getAnimationStart() - now;
-
-                if (elapsedTime >= 50_000_000_000L) {
-                    this.stop();
-                } else {
-                    setAnimationStart(now);
-                    setImages(slot1, slot2, slot3, slotImages);
-                }
-            }
-        };
-        tm.start();
     }
 
     public void setImages(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages) {

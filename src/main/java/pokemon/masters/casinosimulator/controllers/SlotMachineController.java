@@ -97,12 +97,34 @@ public class SlotMachineController {
 
     @FXML
     void onSpin(MouseEvent event) {
-        // grab random image for the fxml
-        Image slot1 = slotImages.get(slots.randNum());
-        Image slot2 = slotImages.get(slots.randNum());
-        Image slot3 = slotImages.get(slots.randNum());
+        slots.setStartTime(0);
+        //the animation
+        AnimationTimer tm = new AnimationTimer() {
 
-        slots.slotAnimationTimer(imgSlot1, imgSlot2, imgSlot3, slotImages);
+            @Override
+            public void handle(long now) {
+                if (slots.getStartTime() == 0) {
+                    slots.setStartTime(now);
+                    this.start();
+                    btnSpin.setDisable(true);
+                }
+
+                long elapsedTime = slots.getAnimationStart() - slots.getStartTime();
+
+                System.out.println(elapsedTime);
+                //lasts for 5 seconds
+                if (elapsedTime >= 5_000_000_000L) {
+                    this.stop();
+                    btnSpin.setDisable(false);
+                } else {
+                    slots.setAnimationStart(now);
+                    //set random images
+                    slots.setImages(imgSlot1, imgSlot2, imgSlot3, slotImages);
+                }
+            }
+
+        };
+        tm.handle(0);
     }
 
     @FXML
