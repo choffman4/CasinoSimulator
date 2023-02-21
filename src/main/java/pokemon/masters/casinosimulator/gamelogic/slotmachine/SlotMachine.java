@@ -11,7 +11,7 @@ public class SlotMachine {
 
     private long animationStart;
 
-    private boolean restart;
+    public long startTime;
 
     public long getAnimationStart() {
         return animationStart;
@@ -21,13 +21,6 @@ public class SlotMachine {
         this.animationStart = animationStart;
     }
 
-    public boolean isRestart() {
-        return restart;
-    }
-
-    public void setRestart(boolean restart) {
-        this.restart = restart;
-    }
 
     public int randNum() {
 
@@ -39,8 +32,18 @@ public class SlotMachine {
 
             @Override
             public void handle(long now) {
-                setAnimationStart(now);
-                setImages(slot1, slot2, slot3, slotImages);
+                if (startTime == 0) {
+                    startTime = now;
+                }
+
+                long elapsedTime = getAnimationStart() - now;
+
+                if (elapsedTime >= 50_000_000_000L) {
+                    this.stop();
+                } else {
+                    setAnimationStart(now);
+                    setImages(slot1, slot2, slot3, slotImages);
+                }
             }
         };
         tm.start();
