@@ -97,7 +97,6 @@ public class SlotMachineController {
 
     @FXML
     void onSpin(MouseEvent event) {
-        slots.setStartTime(0);
         //the animation
         AnimationTimer tm = new AnimationTimer() {
 
@@ -124,6 +123,8 @@ public class SlotMachineController {
             }
 
         };
+        slots.setStartTime(0);
+        slots.setAnimationStart(0);
         tm.handle(0);
     }
 
