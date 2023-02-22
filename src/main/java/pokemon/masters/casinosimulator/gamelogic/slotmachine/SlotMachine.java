@@ -3,6 +3,8 @@ package pokemon.masters.casinosimulator.gamelogic.slotmachine;
 import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import pokemon.masters.casinosimulator.gamelogic.Player;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -39,5 +41,10 @@ public class SlotMachine {
         slot1.setImage(slotImages.get(randNum()));
         slot2.setImage(slotImages.get(randNum()));
         slot3.setImage(slotImages.get(randNum()));
+    }
+
+    public void showPlayerMoney(Text chipsDisplay) {
+        int chips = Player.getChipMoney();
+        chipsDisplay.setText("$" + chips);
     }
 }

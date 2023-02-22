@@ -30,9 +30,11 @@ public class SlotMachineController {
 
     @FXML
     protected void initialize() {
-//        slotImages.clear();
 
         try {
+            // show how much money the player has
+            slots.showPlayerMoney(txtChipsAmount);
+
             // adds all the images to slot images array on start, this is to be able to display and grab easily
             InputStream banana = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelBanana.png");
             Image imgBanana = new Image(banana);
@@ -123,6 +125,7 @@ public class SlotMachineController {
             }
 
         };
+        //these need to be reset to spin again
         slots.setStartTime(0);
         slots.setAnimationStart(0);
         tm.handle(0);
