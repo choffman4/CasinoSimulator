@@ -34,7 +34,7 @@ public class CrapsController {
             imgBetDontPass1, imgBetField, imgBetHardway2, imgBetHardway3, imgBetHardway4, imgBetHardway5, imgBetHorns1,
             imgBetPass, imgDice1, imgDice2, imgPoint, imgPoint10, imgPoint4, imgPoint5, imgPoint6, imgPoint8, imgPoint9,
             imgRoll, imgRules, btnChip1, btnChip10, btnChip100, btnChip1K, btnChip20, btnChip5, btnChip50, btnChip500,
-            btnChip5K;
+            btnChip5K, img8ExtraBet2, img8ExtraBet1, img6ExtraBet1, img6ExtraBet2;
 
     @FXML
     private Text txtBack, txtChipsAmount, txtRoll, txtRules;

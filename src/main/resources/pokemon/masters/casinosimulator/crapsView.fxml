@@ -192,11 +192,11 @@
          <children>
             <ImageView fx:id="imgBet5" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet6" layoutX="395.0" layoutY="158.0" onMouseClicked="#onBet6" prefHeight="60.0" prefWidth="78.0">
+      <StackPane fx:id="stackBet6" layoutX="395.0" layoutY="158.0" onMouseClicked="#onBet6" prefHeight="35.0" prefWidth="78.0">
          <children>
             <ImageView fx:id="imgBet6" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet8" layoutX="478.0" layoutY="158.0" onMouseClicked="#onBet8" prefHeight="60.0" prefWidth="78.0">
+      <StackPane fx:id="stackBet8" layoutX="478.0" layoutY="158.0" onMouseClicked="#onBet8" prefHeight="35.0" prefWidth="78.0">
          <children>
             <ImageView fx:id="imgBet8" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
@@ -274,5 +274,9 @@
             <Image url="@casinoassets/Craps/Dice1.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="img8ExtraBet1" fitHeight="34.0" fitWidth="34.0" layoutX="500.0" layoutY="193.0" />
+      <ImageView fx:id="img8ExtraBet2" fitHeight="34.0" fitWidth="34.0" layoutX="500.0" layoutY="207.0" />
+      <ImageView fx:id="img6ExtraBet1" fitHeight="34.0" fitWidth="34.0" layoutX="417.0" layoutY="194.0" />
+      <ImageView fx:id="img6ExtraBet2" fitHeight="34.0" fitWidth="34.0" layoutX="417.0" layoutY="208.0" />
    </children>
 </Pane>
