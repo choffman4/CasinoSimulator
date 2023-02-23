@@ -28,6 +28,8 @@ public class SlotMachineController {
 
     protected ArrayList<Image> slotImages = new ArrayList<>();
 
+    protected ArrayList<ImageView> yellowMarkers = new ArrayList<>();
+
     @FXML
     protected void initialize() {
 
@@ -71,6 +73,18 @@ public class SlotMachineController {
             InputStream seven = new FileInputStream("src\\main\\resources\\pokemon\\masters\\casinosimulator\\casinoassets\\Slots\\WheelSeven.png");
             Image imgSeven = new Image(seven);
             slotImages.add(imgSeven);
+
+            yellowMarkers.add(imgArrowMarker1);
+            yellowMarkers.add(imgArrowMarker5);
+            yellowMarkers.add(imgArrowMarker10);
+            yellowMarkers.add(imgArrowMarker20);
+            yellowMarkers.add(imgArrowMarker50);
+            yellowMarkers.add(imgArrowMarker100);
+            yellowMarkers.add(imgArrowMarker500);
+            yellowMarkers.add(imgArrowMarker1k);
+            yellowMarkers.add(imgArrowMarker5k);
+
+            slots.setMarkersInvisible(yellowMarkers);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -133,46 +147,46 @@ public class SlotMachineController {
 
     @FXML
     void betFifty(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker50, yellowMarkers);
     }
 
     @FXML
     void betFive(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker5, yellowMarkers);
     }
 
     @FXML
     void betFiveHundred(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker500, yellowMarkers);
     }
 
     @FXML
     void betFiveThousand(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker5k, yellowMarkers);
     }
 
     @FXML
     void betOne(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker1, yellowMarkers);
     }
 
     @FXML
     void betOneHundred(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker100, yellowMarkers);
     }
 
     @FXML
     void betOneThousand(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker1k, yellowMarkers);
     }
 
     @FXML
     void betTen(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker10, yellowMarkers);
     }
 
     @FXML
     void betTwenty(MouseEvent event) {
-
+        slots.changeMarkerPosition(imgArrowMarker20, yellowMarkers);
     }
 }

@@ -1,8 +1,10 @@
 package pokemon.masters.casinosimulator.gamelogic.slotmachine;
 
 import javafx.animation.AnimationTimer;
+import javafx.event.EventTarget;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import pokemon.masters.casinosimulator.gamelogic.Player;
 
@@ -46,5 +48,22 @@ public class SlotMachine {
     public void showPlayerMoney(Text chipsDisplay) {
         int chips = Player.getChipMoney();
         chipsDisplay.setText("$" + chips);
+    }
+
+    public void setMarkersInvisible(ArrayList<ImageView> markers) {
+        // make markers invisible
+        // disable and transparent to mouse is there for precaution
+        for (ImageView marker: markers
+        ) {
+            marker.setVisible(false);
+            marker.setDisable(true);
+            marker.setMouseTransparent(true);
+        }
+    }
+
+    public void changeMarkerPosition(ImageView marker, ArrayList<ImageView> otherMarkers) {
+        setMarkersInvisible(otherMarkers);
+        // enable the one above the chip
+        marker.setVisible(true);
     }
 }
