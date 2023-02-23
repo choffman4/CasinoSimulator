@@ -192,14 +192,6 @@
          <children>
             <ImageView fx:id="imgBet5" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet6" layoutX="395.0" layoutY="158.0" onMouseClicked="#onBet6" prefHeight="35.0" prefWidth="78.0">
-         <children>
-            <ImageView fx:id="imgBet6" fitHeight="34.0" fitWidth="34.0" />
-         </children></StackPane>
-      <StackPane fx:id="stackBet8" layoutX="478.0" layoutY="158.0" onMouseClicked="#onBet8" prefHeight="35.0" prefWidth="78.0">
-         <children>
-            <ImageView fx:id="imgBet8" fitHeight="34.0" fitWidth="34.0" />
-         </children></StackPane>
       <StackPane fx:id="stackBet9" layoutX="559.0" layoutY="158.0" onMouseClicked="#onBet9" prefHeight="60.0" prefWidth="78.0">
          <children>
             <ImageView fx:id="imgBet9" fitHeight="34.0" fitWidth="34.0" />
@@ -276,7 +268,27 @@
       </ImageView>
       <ImageView fx:id="img8ExtraBet1" fitHeight="34.0" fitWidth="34.0" layoutX="500.0" layoutY="193.0" />
       <ImageView fx:id="img8ExtraBet2" fitHeight="34.0" fitWidth="34.0" layoutX="500.0" layoutY="207.0" />
-      <ImageView fx:id="img6ExtraBet1" fitHeight="34.0" fitWidth="34.0" layoutX="417.0" layoutY="194.0" />
-      <ImageView fx:id="img6ExtraBet2" fitHeight="34.0" fitWidth="34.0" layoutX="417.0" layoutY="208.0" />
+      <Pane fx:id="panePlace6" layoutX="395.0" layoutY="158.0" onMouseClicked="#onBet6">
+         <children>
+            <StackPane fx:id="stackBet6" layoutY="4.0" prefHeight="35.0" prefWidth="78.0">
+               <children>
+                  <ImageView fx:id="imgBet6" fitHeight="34.0" fitWidth="34.0" />
+               </children>
+            </StackPane>
+            <ImageView fx:id="img6ExtraBet1" fitHeight="34.0" fitWidth="34.0" layoutX="22.0" layoutY="40.0" />
+            <ImageView fx:id="img6ExtraBet2" fitHeight="34.0" fitWidth="34.0" layoutX="22.0" layoutY="54.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="panePlace8" layoutX="478.0" layoutY="158.0" onMouseClicked="#onBet8">
+         <children>
+            <StackPane fx:id="stackBet8" layoutY="4.0" prefHeight="35.0" prefWidth="78.0">
+               <children>
+                  <ImageView fx:id="imgBet8" fitHeight="34.0" fitWidth="34.0" />
+               </children>
+            </StackPane>
+            <ImageView fx:id="img8ExtraBet1" fitHeight="34.0" fitWidth="34.0" layoutX="22.0" layoutY="40.0" />
+            <ImageView fx:id="img8ExtraBet2" fitHeight="34.0" fitWidth="34.0" layoutX="22.0" layoutY="54.0" />
+         </children>
+      </Pane>
    </children>
 </Pane>
