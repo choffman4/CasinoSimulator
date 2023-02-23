@@ -74,7 +74,7 @@
             </Text>
          </children>
       </StackPane>
-      <StackPane fx:id="btnRules" layoutX="78.0" layoutY="86.0">
+      <StackPane fx:id="btnRules" layoutX="78.0" layoutY="86.0" onMouseClicked="#onRules">
          <children>
             <ImageView fx:id="imgRules" fitHeight="32.0" fitWidth="100.0">
                <image>
@@ -178,195 +178,91 @@
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="img4" fitHeight="50.0" fitWidth="50.0" layoutX="255.0" layoutY="77.0" opacity="0.9">
-         <image>
-            <Image url="@casinoassets/Craps/CrapsOffIndicator.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="img5" fitHeight="50.0" fitWidth="50.0" layoutX="338.0" layoutY="77.0" opacity="0.9">
-         <image>
-            <Image url="@casinoassets/Craps/CrapsOffIndicator.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="img6" fitHeight="50.0" fitWidth="50.0" layoutX="421.0" layoutY="77.0" opacity="0.9">
-         <image>
-            <Image url="@casinoassets/Craps/CrapsOffIndicator.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="img8" fitHeight="50.0" fitWidth="50.0" layoutX="502.0" layoutY="77.0" opacity="0.9">
-         <image>
-            <Image url="@casinoassets/Craps/CrapsOffIndicator.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="img9" fitHeight="50.0" fitWidth="50.0" layoutX="585.0" layoutY="77.0" opacity="0.9">
-         <image>
-            <Image url="@casinoassets/Craps/CrapsOffIndicator.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="img10" fitHeight="50.0" fitWidth="50.0" layoutX="667.0" layoutY="77.0" opacity="0.9">
-         <image>
-            <Image url="@casinoassets/Craps/CrapsOffIndicator.png" />
-         </image>
-      </ImageView>
-      <StackPane fx:id="stackBet4" layoutX="231.0" layoutY="158.0" prefHeight="60.0" prefWidth="78.0">
+      <ImageView fx:id="img4" fitHeight="50.0" fitWidth="50.0" layoutX="255.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="img5" fitHeight="50.0" fitWidth="50.0" layoutX="338.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="img6" fitHeight="50.0" fitWidth="50.0" layoutX="421.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="img8" fitHeight="50.0" fitWidth="50.0" layoutX="502.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="img9" fitHeight="50.0" fitWidth="50.0" layoutX="585.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="img10" fitHeight="50.0" fitWidth="50.0" layoutX="667.0" layoutY="77.0" opacity="0.9" />
+      <StackPane fx:id="stackBet4" layoutX="231.0" layoutY="158.0" onMouseClicked="#onBet4" prefHeight="60.0" prefWidth="78.0">
          <children>
-            <ImageView fx:id="imgBet4" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet4" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet5" layoutX="313.0" layoutY="158.0" prefHeight="60.0" prefWidth="78.0">
+      <StackPane fx:id="stackBet5" layoutX="313.0" layoutY="158.0" onMouseClicked="#onBet5" prefHeight="60.0" prefWidth="78.0">
          <children>
-            <ImageView fx:id="imgBet5" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet5" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet6" layoutX="395.0" layoutY="158.0" prefHeight="60.0" prefWidth="78.0">
+      <StackPane fx:id="stackBet6" layoutX="395.0" layoutY="158.0" onMouseClicked="#onBet6" prefHeight="60.0" prefWidth="78.0">
          <children>
-            <ImageView fx:id="imgBet6" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet6" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet8" layoutX="478.0" layoutY="158.0" prefHeight="60.0" prefWidth="78.0">
+      <StackPane fx:id="stackBet8" layoutX="478.0" layoutY="158.0" onMouseClicked="#onBet8" prefHeight="60.0" prefWidth="78.0">
          <children>
-            <ImageView fx:id="imgBet8" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet8" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet9" layoutX="559.0" layoutY="158.0" prefHeight="60.0" prefWidth="78.0">
+      <StackPane fx:id="stackBet9" layoutX="559.0" layoutY="158.0" onMouseClicked="#onBet9" prefHeight="60.0" prefWidth="78.0">
          <children>
-            <ImageView fx:id="imgBet9" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet9" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackBet10" layoutX="643.0" layoutY="158.0" prefHeight="60.0" prefWidth="78.0">
+      <StackPane fx:id="stackBet10" layoutX="643.0" layoutY="158.0" onMouseClicked="#onBet10" prefHeight="60.0" prefWidth="78.0">
          <children>
-            <ImageView fx:id="imgBet10" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet10" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackField" layoutX="231.0" layoutY="316.0" prefHeight="90.0" prefWidth="488.0">
+      <StackPane fx:id="stackField" layoutX="231.0" layoutY="316.0" onMouseClicked="#onBetField" prefHeight="90.0" prefWidth="488.0">
          <children>
-            <ImageView fx:id="imgBetField" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetField" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackDontPass" layoutX="230.0" layoutY="410.0" prefHeight="37.0" prefWidth="490.0">
+      <StackPane fx:id="stackDontPass" layoutX="230.0" layoutY="410.0" onMouseClicked="#onBetDontPass" prefHeight="37.0" prefWidth="490.0">
          <children>
-            <ImageView fx:id="imgBetDontPass1" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetDontPass1" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackPass" layoutX="230.0" layoutY="451.0" prefHeight="47.0" prefWidth="490.0">
+      <StackPane fx:id="stackPass" layoutX="230.0" layoutY="451.0" onMouseClicked="#onBetPassLine" prefHeight="47.0" prefWidth="490.0">
          <children>
-            <ImageView fx:id="imgBetPass" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetPass" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackHardway2" layoutX="743.0" layoutY="86.0" prefHeight="40.0" prefWidth="96.0">
+      <StackPane fx:id="stackHardway2" layoutX="743.0" layoutY="86.0" onMouseClicked="#onBetHardway2" prefHeight="40.0" prefWidth="96.0">
          <children>
-            <ImageView fx:id="imgBetHardway2" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetHardway2" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackHardway5" layoutX="842.0" layoutY="86.0" prefHeight="40.0" prefWidth="96.0">
+      <StackPane fx:id="stackHardway5" layoutX="842.0" layoutY="86.0" onMouseClicked="#onBetHardway5" prefHeight="40.0" prefWidth="96.0">
          <children>
-            <ImageView fx:id="imgBetHardway5" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetHardway5" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackHardway4" layoutX="842.0" layoutY="128.0" prefHeight="40.0" prefWidth="96.0">
+      <StackPane fx:id="stackHardway4" layoutX="842.0" layoutY="128.0" onMouseClicked="#onBetHardway4" prefHeight="40.0" prefWidth="96.0">
          <children>
-            <ImageView fx:id="imgBetHardway4" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetHardway4" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackHardway3" layoutX="743.0" layoutY="128.0" prefHeight="40.0" prefWidth="96.0">
+      <StackPane fx:id="stackHardway3" layoutX="743.0" layoutY="128.0" onMouseClicked="#onBetHardway3" prefHeight="40.0" prefWidth="96.0">
          <children>
-            <ImageView fx:id="imgBetHardway3" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetHardway3" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackHorns" layoutX="817.0" layoutY="269.0" prefHeight="88.0" prefWidth="44.0">
+      <StackPane fx:id="stackHorns" layoutX="817.0" layoutY="269.0" onMouseClicked="#onBetHorns" prefHeight="88.0" prefWidth="44.0">
          <children>
-            <ImageView fx:id="imgBetHorns1" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetHorns1" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stack7" layoutX="743.0" layoutY="224.0" prefHeight="42.0" prefWidth="192.0">
+      <StackPane fx:id="stack7" layoutX="743.0" layoutY="224.0" onMouseClicked="#onBet7" prefHeight="42.0" prefWidth="192.0">
          <children>
-            <ImageView fx:id="imgBet7" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet7" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stackAnyCraps" layoutX="743.0" layoutY="361.0" prefHeight="42.0" prefWidth="192.0">
+      <StackPane fx:id="stackAnyCraps" layoutX="743.0" layoutY="361.0" onMouseClicked="#onBetAny" prefHeight="42.0" prefWidth="192.0">
          <children>
-            <ImageView fx:id="imgBetAnyCraps" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBetAnyCraps" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stack3" layoutX="743.0" layoutY="269.0" prefHeight="41.0" prefWidth="73.0">
+      <StackPane fx:id="stack3" layoutX="743.0" layoutY="269.0" onMouseClicked="#onBet3" prefHeight="41.0" prefWidth="73.0">
          <children>
-            <ImageView fx:id="imgBet3" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet3" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stack2" layoutX="743.0" layoutY="316.0" prefHeight="41.0" prefWidth="73.0">
+      <StackPane fx:id="stack2" layoutX="743.0" layoutY="316.0" onMouseClicked="#onBet2" prefHeight="41.0" prefWidth="73.0">
          <children>
-            <ImageView fx:id="imgBet21" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet21" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stack11" layoutX="866.0" layoutY="269.0" prefHeight="41.0" prefWidth="73.0">
+      <StackPane fx:id="stack11" layoutX="866.0" layoutY="269.0" onMouseClicked="#onBet11" prefHeight="41.0" prefWidth="73.0">
          <children>
-            <ImageView fx:id="imgBet11" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet11" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
-      <StackPane fx:id="stack12" layoutX="866.0" layoutY="316.0" prefHeight="41.0" prefWidth="73.0">
+      <StackPane fx:id="stack12" layoutX="866.0" layoutY="316.0" onMouseClicked="#onBet12" prefHeight="41.0" prefWidth="73.0">
          <children>
-            <ImageView fx:id="imgBet12" fitHeight="34.0" fitWidth="34.0" onMouseClicked="#betOne">
-               <image>
-                  <Image url="@casinoassets/OverallUI/Chip1.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgBet12" fitHeight="34.0" fitWidth="34.0" />
          </children></StackPane>
       <ImageView fx:id="imgDice1" fitHeight="60.0" fitWidth="60.0" layoutX="48.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
          <image>
