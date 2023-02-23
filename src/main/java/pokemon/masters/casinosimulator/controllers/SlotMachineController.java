@@ -6,9 +6,11 @@ import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
 import javafx.util.Duration;
@@ -23,6 +25,17 @@ import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class SlotMachineController {
+
+    private boolean displayRules = false;
+
+    public boolean isDisplayRules() {
+        return displayRules;
+    }
+    public void setDisplayRules(boolean displayRules) {
+        this.displayRules = displayRules;
+    }
+
+    TextArea rulesTextArea;
 
     SlotMachine slots = new SlotMachine();
 
@@ -91,6 +104,9 @@ public class SlotMachineController {
     }
 
     @FXML
+    private Pane rulesPane;
+
+    @FXML
     private StackPane btnBack, btnSpin, btnRules;
 
     @FXML
@@ -108,7 +124,21 @@ public class SlotMachineController {
     }
     @FXML
     void onRules(MouseEvent event) {
-
+        if (!displayRules) {
+            // Create the TextArea and set rulesVisible to true
+            rulesTextArea = new TextArea("Spin to win!\n" +
+                    "Payouts based on Bet/Result are listed under the rules button.");
+            rulesTextArea.setPrefSize(400, 400);
+            rulesTextArea.setEditable(false);
+            rulesTextArea.setLayoutX((rulesPane.getWidth() - rulesTextArea.getPrefWidth()) / 2);
+            rulesTextArea.setLayoutY((rulesPane.getHeight() - rulesTextArea.getPrefHeight()) / 2);
+            rulesPane.getChildren().add(rulesTextArea);
+            displayRules = true;
+        } else {
+            // Delete the TextArea and set rulesVisible to false
+            rulesPane.getChildren().remove(rulesTextArea);
+            displayRules = false;
+        }
     }
 
     @FXML
@@ -127,8 +157,8 @@ public class SlotMachineController {
                 long elapsedTime = slots.getAnimationStart() - slots.getStartTime();
 
                 System.out.println(elapsedTime);
-                //lasts for 5 seconds
-                if (elapsedTime >= 5_000_000_000L) {
+                //lasts for 3 seconds
+                if (elapsedTime >= 3_000_000_000L) {
                     this.stop();
                     btnSpin.setDisable(false);
                 } else {
