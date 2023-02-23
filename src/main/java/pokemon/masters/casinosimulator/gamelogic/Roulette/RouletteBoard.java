@@ -7,9 +7,7 @@ public class RouletteBoard {
     public final Cell[] cells = new Cell[36];
     public final Cell[] specialCells = new Cell[13];
 
-
     private int chipValueInHand;
-
 
     public RouletteBoard() {
 

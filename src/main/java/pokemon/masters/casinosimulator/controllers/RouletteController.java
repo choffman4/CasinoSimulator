@@ -329,7 +329,7 @@ public class RouletteController {
     //Places chip on roulette table
     private void placeChip(StackPane pane, ImageView img, int chipValueInHand, int cellID) {
         if(gameBoard.getChipValueInHand() != 0) {
-            if (gameBoard.cells[cellID - 1].getChipValue() == 0) {
+            if (gameBoard.cells[cellID - 1].getChipValue() == 0 && Player.getChipMoney() > 0) {
                 gameBoard.cells[cellID - 1].setHasChip(true);
                 gameBoard.cells[cellID - 1].setChipValue(chipValueInHand);
                 System.out.println(gameBoard.cells[cellID - 1]);
@@ -388,7 +388,7 @@ public class RouletteController {
 
     private void placeChipOnSpecials(StackPane pane, ImageView img, int chipValueInHand, int cellID) {
         if(gameBoard.getChipValueInHand() != 0) {
-            if (gameBoard.specialCells[cellID].getChipValue() == 0) {
+            if (gameBoard.specialCells[cellID].getChipValue() == 0  && Player.getChipMoney() > 0) {
                 gameBoard.specialCells[cellID].setHasChip(true);
                 gameBoard.specialCells[cellID].setChipValue(chipValueInHand);
                 System.out.println(gameBoard.specialCells[cellID]);
