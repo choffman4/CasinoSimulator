@@ -67,52 +67,52 @@
             <Font name="ChunkFiveEx" size="16.0" />
          </font>
       </Text>
-      <ImageView fx:id="btnChip1" fitHeight="58.0" fitWidth="58.0" layoutX="227.0" layoutY="570.0" >
+      <ImageView fx:id="btnChip1" fitHeight="58.0" fitWidth="58.0" layoutX="227.0" layoutY="570.0" onMouseClicked="#bet1">
          <image>
             <Image url="@casinoassets/OverallUI/Chip1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip5" fitHeight="58.0" fitWidth="58.0" layoutX="295.0" layoutY="571.0" >
+      <ImageView fx:id="btnChip5" fitHeight="58.0" fitWidth="58.0" layoutX="295.0" layoutY="571.0" onMouseClicked="#bet5">
          <image>
             <Image url="@casinoassets/OverallUI/Chip5.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip10" fitHeight="58.0" fitWidth="58.0" layoutX="365.0" layoutY="570.0" >
+      <ImageView fx:id="btnChip10" fitHeight="58.0" fitWidth="58.0" layoutX="365.0" layoutY="570.0" onMouseClicked="#bet10">
          <image>
             <Image url="@casinoassets/OverallUI/Chip10.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip20" fitHeight="58.0" fitWidth="58.0" layoutX="436.0" layoutY="570.0" >
+      <ImageView fx:id="btnChip20" fitHeight="58.0" fitWidth="58.0" layoutX="436.0" layoutY="570.0" onMouseClicked="#bet20">
          <image>
             <Image url="@casinoassets/OverallUI/Chip20.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip50" fitHeight="58.0" fitWidth="58.0" layoutX="506.0" layoutY="571.0" >
+      <ImageView fx:id="btnChip50" fitHeight="58.0" fitWidth="58.0" layoutX="506.0" layoutY="571.0" onMouseClicked="#bet50">
          <image>
             <Image url="@casinoassets/OverallUI/Chip50.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip100" fitHeight="58.0" fitWidth="58.0" layoutX="576.0" layoutY="570.0" >
+      <ImageView fx:id="btnChip100" fitHeight="58.0" fitWidth="58.0" layoutX="576.0" layoutY="570.0" onMouseClicked="#bet100">
          <image>
             <Image url="@casinoassets/OverallUI/Chip100.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip500" fitHeight="58.0" fitWidth="58.0" layoutX="644.0" layoutY="570.0" >
+      <ImageView fx:id="btnChip500" fitHeight="58.0" fitWidth="58.0" layoutX="644.0" layoutY="570.0" onMouseClicked="#bet500">
          <image>
             <Image url="@casinoassets/OverallUI/Chip500.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip1K" fitHeight="58.0" fitWidth="58.0" layoutX="713.0" layoutY="571.0" >
+      <ImageView fx:id="btnChip1K" fitHeight="58.0" fitWidth="58.0" layoutX="713.0" layoutY="571.0" onMouseClicked="#bet1k">
          <image>
             <Image url="@casinoassets/OverallUI/Chip1000.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip5K" fitHeight="58.0" fitWidth="58.0" layoutX="782.0" layoutY="571.0" >
+      <ImageView fx:id="btnChip5K" fitHeight="58.0" fitWidth="58.0" layoutX="782.0" layoutY="571.0" onMouseClicked="#bet5k">
          <image>
             <Image url="@casinoassets/OverallUI/Chip5000.png" />
          </image>
       </ImageView>
-      <StackPane fx:id="btnRules" layoutX="124.0" layoutY="103.0" >
+      <StackPane fx:id="btnRules" layoutX="124.0" layoutY="103.0" onMouseClicked="#onRules">
          <children>
             <ImageView fx:id="imgRules" fitHeight="32.0" fitWidth="100.0">
                <image>
@@ -133,7 +133,7 @@
                   <Image url="@casinoassets/OverallUI/ButtonUp.png" />
                </image>
             </ImageView>
-            <Text fx:id="txtBack"  strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="144.00000000000006">
+            <Text fx:id="txtBack" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="144.00000000000006">
                <font>
                   <Font name="ChunkFiveEx" size="42.0" />
                </font>
@@ -143,7 +143,7 @@
             </Text>
          </children>
       </StackPane>
-      <StackPane fx:id="btnDraw" layoutX="857.0" layoutY="575.0" >
+      <StackPane fx:id="btnDraw" layoutX="857.0" layoutY="575.0" onMouseClicked="#onDraw">
          <children>
             <ImageView fx:id="imgSpin" fitHeight="56.0" fitWidth="172.0">
                <image>
