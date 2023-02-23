@@ -35,7 +35,7 @@
             <Image url="@casinoassets/Craps/CrapsBoard.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="194.0" layoutY="34.0">
+      <ImageView fx:id="imgPoint" fitHeight="50.0" fitWidth="50.0" layoutX="194.0" layoutY="34.0">
          <image>
             <Image url="@casinoassets/Craps/CrapsOffIndicator.png" />
          </image>
@@ -178,12 +178,12 @@
             <Image url="@casinoassets/OverallUI/ArrowDown.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="img4" fitHeight="50.0" fitWidth="50.0" layoutX="255.0" layoutY="77.0" opacity="0.9" />
-      <ImageView fx:id="img5" fitHeight="50.0" fitWidth="50.0" layoutX="338.0" layoutY="77.0" opacity="0.9" />
-      <ImageView fx:id="img6" fitHeight="50.0" fitWidth="50.0" layoutX="421.0" layoutY="77.0" opacity="0.9" />
-      <ImageView fx:id="img8" fitHeight="50.0" fitWidth="50.0" layoutX="502.0" layoutY="77.0" opacity="0.9" />
-      <ImageView fx:id="img9" fitHeight="50.0" fitWidth="50.0" layoutX="585.0" layoutY="77.0" opacity="0.9" />
-      <ImageView fx:id="img10" fitHeight="50.0" fitWidth="50.0" layoutX="667.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="imgPoint4" fitHeight="50.0" fitWidth="50.0" layoutX="255.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="imgPoint5" fitHeight="50.0" fitWidth="50.0" layoutX="338.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="imgPoint6" fitHeight="50.0" fitWidth="50.0" layoutX="421.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="imgPoint8" fitHeight="50.0" fitWidth="50.0" layoutX="502.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="imgPoint9" fitHeight="50.0" fitWidth="50.0" layoutX="585.0" layoutY="77.0" opacity="0.9" />
+      <ImageView fx:id="imgPoint10" fitHeight="50.0" fitWidth="50.0" layoutX="667.0" layoutY="77.0" opacity="0.9" />
       <StackPane fx:id="stackBet4" layoutX="231.0" layoutY="158.0" onMouseClicked="#onBet4" prefHeight="60.0" prefWidth="78.0">
          <children>
             <ImageView fx:id="imgBet4" fitHeight="34.0" fitWidth="34.0" />
