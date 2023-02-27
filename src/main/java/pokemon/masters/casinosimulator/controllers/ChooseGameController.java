@@ -43,7 +43,7 @@ public class ChooseGameController {
 
     @FXML
     void onCraps(MouseEvent event) throws IOException {
-//        ChangeScene.changeScene(event, "crapsView.fxml");
+        ChangeScene.changeScene(event, "crapsView.fxml");
     }
 
     @FXML
