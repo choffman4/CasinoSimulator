@@ -183,7 +183,6 @@
             <Font name="ChunkFiveEx" size="42.0" />
          </font>
       </Text>
-      <ImageView fx:id="imgBetContainer" fitHeight="125.0" fitWidth="388.0" layoutX="331.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgSlot1" fitHeight="182.0" fitWidth="117.0" layoutX="325.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgSlot2" fitHeight="182.0" fitWidth="117.0" layoutX="473.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="imgSlot3" fitHeight="182.0" fitWidth="117.0" layoutX="624.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true" />
@@ -277,5 +276,10 @@
          </image>
       </ImageView>
       <Pane fx:id="rulesPane" layoutX="264.0" layoutY="80.0" mouseTransparent="true" prefHeight="421.0" prefWidth="521.0" />
+      <Text fx:id="txtChipsBet" fill="WHITE" layoutX="303.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$0" textAlignment="CENTER" wrappingWidth="463.4701461791992">
+         <font>
+            <Font name="ChunkFiveEx" size="40.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

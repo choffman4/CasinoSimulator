@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import pokemon.masters.casinosimulator.gamelogic.Player;
+import pokemon.masters.casinosimulator.services.FormatMoney;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -14,9 +15,13 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class SlotMachine {
 
+    FormatMoney formatMoney = new FormatMoney();
+
     private long animationStart;
 
     private long startTime = 0;
+
+    private int moneyBet = 0;
 
     public long getAnimationStart() {
         return animationStart;
@@ -34,6 +39,14 @@ public class SlotMachine {
         this.startTime = startTime;
     }
 
+    public int getMoneyBet() {
+        return moneyBet;
+    }
+
+    public void setMoneyBet(int moneyBet) {
+        this.moneyBet = moneyBet;
+    }
+
     public int randNum() {
 
         return ThreadLocalRandom.current().nextInt(0, 9);
@@ -46,8 +59,12 @@ public class SlotMachine {
     }
 
     public void showPlayerMoney(Text chipsDisplay) {
-        int chips = Player.getChipMoney();
-        chipsDisplay.setText("$" + chips);
+        String formattedMoney = formatMoney.Format(Player.getChipMoney());
+        chipsDisplay.setText(formattedMoney);
+    }
+
+    public void addMinusPlayerMoney(int moneyChange) {
+        Player.setChipMoney(Player.getChipMoney() + moneyChange);
     }
 
     public void setMarkersInvisible(ArrayList<ImageView> markers) {
@@ -65,5 +82,13 @@ public class SlotMachine {
         setMarkersInvisible(otherMarkers);
         // enable the one above the chip
         marker.setVisible(true);
+    }
+
+    public void addMoneyToBet(Text betDisplay, int moneyToAdd) {
+        // set the temporary variable for our money bet
+        setMoneyBet(getMoneyBet() + moneyToAdd);
+        // formats money
+        String formattedMoney = formatMoney.Format(getMoneyBet());
+        betDisplay.setText(formattedMoney);
     }
 }
