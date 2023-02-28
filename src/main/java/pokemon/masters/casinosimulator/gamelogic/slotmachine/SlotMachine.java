@@ -91,4 +91,22 @@ public class SlotMachine {
         String formattedMoney = formatMoney.Format(getMoneyBet());
         betDisplay.setText(formattedMoney);
     }
+
+    public Boolean winCheck(ImageView slot1, ImageView slot2, ImageView slot3) {
+        // check if the name of the files is all the same
+        // return true or false
+        return false;
+    }
+
+    public void payoutCalculator(String itemWon, int betAmount) {
+        // get what the item matched was
+        // calculate bet amount by what the payout for that item is
+        // give it to the player
+    }
+
+    public void playerWon(ImageView slot1, ImageView slot2, ImageView slot3) {
+        // call wincheck
+        // if win is true then
+        // call payout and reset bet
+    }
 }
