@@ -72,9 +72,14 @@
                   <Insets top="5.0" />
                </StackPane.margin>
             </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" rotate="15.0">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ComingSoonStamp.png" />
+               </image>
+            </ImageView>
          </children>
       </StackPane>
-      <StackPane fx:id="btnRules" layoutX="78.0" layoutY="86.0" onMouseClicked="#onRules">
+      <StackPane fx:id="btnRules" layoutX="26.0" layoutY="81.0" onMouseClicked="#onRules">
          <children>
             <ImageView fx:id="imgRules" fitHeight="32.0" fitWidth="100.0">
                <image>
@@ -86,6 +91,11 @@
                   <Font name="ChunkFiveEx" size="20.0" />
                </font>
             </Text>
+            <ImageView fitHeight="70.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" rotate="15.0">
+               <image>
+                  <Image url="@casinoassets/OverallUI/ComingSoonStamp.png" />
+               </image>
+            </ImageView>
          </children>
       </StackPane>
       <ImageView fx:id="btnChip1" fitHeight="58.0" fitWidth="58.0" layoutX="219.0" layoutY="569.0" onMouseClicked="#betOne">
