@@ -12,6 +12,8 @@ import pokemon.masters.casinosimulator.services.FormatMoney;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class SlotMachine {
 
@@ -50,6 +52,12 @@ public class SlotMachine {
     public int randNum() {
 
         return ThreadLocalRandom.current().nextInt(0, 9);
+    }
+
+    private Matcher MatchyMatchy(String string, String strRegex) {
+        Pattern p = Pattern.compile(strRegex);
+        Matcher m = p.matcher(string);
+        return m;
     }
 
     public void setImages(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages) {
@@ -93,9 +101,19 @@ public class SlotMachine {
     }
 
     public Boolean winCheck(ImageView slot1, ImageView slot2, ImageView slot3) {
+        Boolean win = false;
+        // get url of the images
+        Image slot1Image = slot1.getImage();
+        Image slot2Image = slot2.getImage();
+        Image slot3Image = slot3.getImage();
         // check if the name of the files is all the same
+        if (slot1Image == slot2Image) {
+            if (slot1Image == slot3Image) {
+                win = true;
+            }
+        }
         // return true or false
-        return false;
+        return win;
     }
 
     public void payoutCalculator(String itemWon, int betAmount) {
@@ -106,7 +124,12 @@ public class SlotMachine {
 
     public void playerWon(ImageView slot1, ImageView slot2, ImageView slot3) {
         // call wincheck
+        Boolean win = winCheck(slot1, slot2, slot3);
         // if win is true then
-        // call payout and reset bet
+        if ( win == true) {
+            // call payout
+        }
+        // reset bet
+        setMoneyBet(0);
     }
 }

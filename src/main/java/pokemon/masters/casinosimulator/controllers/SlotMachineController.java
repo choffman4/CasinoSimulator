@@ -162,6 +162,7 @@ public class SlotMachineController {
                 if (elapsedTime >= 3_000_000_000L) {
                     this.stop();
                     btnSpin.setDisable(false);
+                    slots.playerWon(imgSlot1, imgSlot2, imgSlot3);
                 } else {
                     slots.setAnimationStart(now);
                     //set random images
