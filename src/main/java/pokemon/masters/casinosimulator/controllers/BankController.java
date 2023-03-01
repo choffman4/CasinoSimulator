@@ -31,7 +31,7 @@ public class BankController {
 
     //Withdraws money from bankMoney into players chipMoney
     public void onWithdraw(MouseEvent mouseEvent) {
-        int withDrawAmount = Integer.parseInt(txtWithdraw.getText().toString());
+        int withDrawAmount = Math.abs(Integer.parseInt(txtWithdraw.getText()));
         int bankMoney = Player.getBankMoney();
         int chipMoney = Player.getChipMoney();
 
@@ -45,7 +45,7 @@ public class BankController {
     //Deposits money from chipMoney into players bankMoney
     public void onDeposit(MouseEvent mouseEvent) {
 
-        int depositAmount = Integer.parseInt(txtDeposit.getText().toString());
+        int depositAmount = Math.abs(Integer.parseInt(txtDeposit.getText()));
         int bankMoney = Player.getBankMoney();
         int chipMoney = Player.getChipMoney();
 
