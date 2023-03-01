@@ -122,6 +122,7 @@ public class SlotMachineController {
     @FXML
     protected void onBackPage(MouseEvent event) throws IOException {
         ChangeScene.changeScene(event, "chooseGameView.fxml");
+        slots.addMinusPlayerMoney(slots.getMoneyBet());
     }
     @FXML
     void onRules(MouseEvent event) {
@@ -162,7 +163,7 @@ public class SlotMachineController {
                 if (elapsedTime >= 3_000_000_000L) {
                     this.stop();
                     btnSpin.setDisable(false);
-                    slots.playerWon(imgSlot1, imgSlot2, imgSlot3);
+                    slots.playerWon(imgSlot1, imgSlot2, imgSlot3, slotImages, txtChipsBet);
                 } else {
                     slots.setAnimationStart(now);
                     //set random images
