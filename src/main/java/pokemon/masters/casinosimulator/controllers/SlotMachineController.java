@@ -153,7 +153,6 @@ public class SlotMachineController {
                 if (slots.getStartTime() == 0) {
                     slots.setStartTime(now);
                     this.start();
-                    btnSpin.setDisable(true);
                 }
 
                 long elapsedTime = slots.getAnimationStart() - slots.getStartTime();
@@ -163,7 +162,7 @@ public class SlotMachineController {
                 if (elapsedTime >= 3_000_000_000L) {
                     this.stop();
                     btnSpin.setDisable(false);
-                    slots.playerWon(imgSlot1, imgSlot2, imgSlot3, slotImages, txtChipsBet);
+                    slots.playerWon(imgSlot1, imgSlot2, imgSlot3, slotImages, txtChipsBet, txtChipsAmount);
                 } else {
                     slots.setAnimationStart(now);
                     //set random images
@@ -176,6 +175,7 @@ public class SlotMachineController {
         slots.setStartTime(0);
         slots.setAnimationStart(0);
         tm.handle(0);
+        btnSpin.setDisable(true);
     }
 
     @FXML

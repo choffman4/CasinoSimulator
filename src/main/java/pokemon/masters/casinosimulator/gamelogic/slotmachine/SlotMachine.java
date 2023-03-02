@@ -25,6 +25,8 @@ public class SlotMachine {
 
     private int moneyBet = 0;
 
+    private int timesSpun = 0;
+
     public long getAnimationStart() {
         return animationStart;
     }
@@ -49,9 +51,22 @@ public class SlotMachine {
         this.moneyBet = moneyBet;
     }
 
+    public int getTimesSpun() {
+        return timesSpun;
+    }
+
+    public void setTimesSpun(int timesSpun) {
+        this.timesSpun = timesSpun;
+    }
+
     public int randNum() {
 
         return ThreadLocalRandom.current().nextInt(0, 9);
+    }
+
+    public boolean randTF() {
+
+        return ThreadLocalRandom.current().nextBoolean();
     }
 
     public void setImages(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages) {
@@ -110,7 +125,7 @@ public class SlotMachine {
         return win;
     }
 
-    public void payoutCalculator(ImageView itemWon, int betAmount, ArrayList<Image> slotImages) {
+    public void payoutCalculator(ImageView itemWon, ArrayList<Image> slotImages) {
         // get what the item matched was
         Image item = itemWon.getImage();
 
@@ -120,75 +135,90 @@ public class SlotMachine {
                 int totalEarnings;
                 // calculate bet amount by what the payout for that item is
                 switch (slotImages.indexOf(slotImage)) {
-                    case 0:
+                    case 0 -> {
                         betEarnings = getMoneyBet() * 3;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 1:
+                    }
+                    case 1 -> {
                         betEarnings = getMoneyBet() * 100;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 2:
+                    }
+                    case 2 -> {
                         betEarnings = getMoneyBet() * 50;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 3:
+                    }
+                    case 3 -> {
                         betEarnings = getMoneyBet() * 20;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 4:
+                    }
+                    case 4 -> {
                         betEarnings = getMoneyBet();
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 5:
+                    }
+                    case 5 -> {
                         betEarnings = getMoneyBet() * 5;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 6:
+                    }
+                    case 6 -> {
                         betEarnings = getMoneyBet() * 2;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 7:
+                    }
+                    case 7 -> {
                         betEarnings = getMoneyBet() * 10;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
-                    case 8:
+                    }
+                    case 8 -> {
                         betEarnings = getMoneyBet() * 1000;
                         totalEarnings = betEarnings + getMoneyBet();
                         // give it to the player
                         addMinusPlayerMoney(totalEarnings);
-                        break;
+                    }
                 }
             }
         }
     }
 
-    public void playerWon(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages, Text betText) {
+    public void playerWon(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages, Text betText, Text playerMoney) {
         // call wincheck
         Boolean win = winCheck(slot1, slot2, slot3);
         // if win is true then
         if ( win == true) {
             // call payout
-            payoutCalculator(slot1, getMoneyBet(), slotImages);
+            payoutCalculator(slot1, slotImages);
+            setTimesSpun(0);
+        }
+        else if (getTimesSpun() >= 5) {
+            Boolean makeWin = randTF();
+            if (makeWin ==  true) {
+                slot1.setImage(slotImages.get(4));
+                slot2.setImage(slotImages.get(4));
+                slot3.setImage(slotImages.get(4));
+                payoutCalculator(slot1, slotImages);
+            }
+            setTimesSpun(0);
+        }
+        else {
+            setTimesSpun(getTimesSpun() + 1);
         }
         // reset bet
         setMoneyBet(0);
         betText.setText(formatMoney.Format(getMoneyBet()));
+        showPlayerMoney(playerMoney);
     }
 }
