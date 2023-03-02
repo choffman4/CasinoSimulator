@@ -54,12 +54,6 @@ public class SlotMachine {
         return ThreadLocalRandom.current().nextInt(0, 9);
     }
 
-    private Matcher MatchyMatchy(String string, String strRegex) {
-        Pattern p = Pattern.compile(strRegex);
-        Matcher m = p.matcher(string);
-        return m;
-    }
-
     public void setImages(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages) {
         slot1.setImage(slotImages.get(randNum()));
         slot2.setImage(slotImages.get(randNum()));
@@ -116,20 +110,85 @@ public class SlotMachine {
         return win;
     }
 
-    public void payoutCalculator(String itemWon, int betAmount) {
+    public void payoutCalculator(ImageView itemWon, int betAmount, ArrayList<Image> slotImages) {
         // get what the item matched was
-        // calculate bet amount by what the payout for that item is
-        // give it to the player
+        Image item = itemWon.getImage();
+
+        for (Image slotImage: slotImages) {
+            if ( item == slotImage) {
+                int betEarnings;
+                int totalEarnings;
+                // calculate bet amount by what the payout for that item is
+                switch (slotImages.indexOf(slotImage)) {
+                    case 0:
+                        betEarnings = getMoneyBet() * 3;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 1:
+                        betEarnings = getMoneyBet() * 100;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 2:
+                        betEarnings = getMoneyBet() * 50;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 3:
+                        betEarnings = getMoneyBet() * 20;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 4:
+                        betEarnings = getMoneyBet();
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 5:
+                        betEarnings = getMoneyBet() * 5;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 6:
+                        betEarnings = getMoneyBet() * 2;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 7:
+                        betEarnings = getMoneyBet() * 10;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                    case 8:
+                        betEarnings = getMoneyBet() * 1000;
+                        totalEarnings = betEarnings + getMoneyBet();
+                        // give it to the player
+                        addMinusPlayerMoney(totalEarnings);
+                        break;
+                }
+            }
+        }
     }
 
-    public void playerWon(ImageView slot1, ImageView slot2, ImageView slot3) {
+    public void playerWon(ImageView slot1, ImageView slot2, ImageView slot3, ArrayList<Image> slotImages, Text betText) {
         // call wincheck
         Boolean win = winCheck(slot1, slot2, slot3);
         // if win is true then
         if ( win == true) {
             // call payout
+            payoutCalculator(slot1, getMoneyBet(), slotImages);
         }
         // reset bet
         setMoneyBet(0);
+        betText.setText(formatMoney.Format(getMoneyBet()));
     }
 }
