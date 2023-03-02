@@ -203,7 +203,9 @@ public class SlotMachine {
             payoutCalculator(slot1, slotImages);
             setTimesSpun(0);
         }
+        // checks how many times spun
         else if (getTimesSpun() >= 5) {
+            // will make random true or false and decide if player wins
             Boolean makeWin = randTF();
             if (makeWin ==  true) {
                 slot1.setImage(slotImages.get(4));

@@ -161,8 +161,10 @@ public class SlotMachineController {
                 //lasts for 3 seconds
                 if (elapsedTime >= 3_000_000_000L) {
                     this.stop();
-                    btnSpin.setDisable(false);
+                    //check if the player won
                     slots.playerWon(imgSlot1, imgSlot2, imgSlot3, slotImages, txtChipsBet, txtChipsAmount);
+                    //enable spin again
+                    btnSpin.setDisable(false);
                 } else {
                     slots.setAnimationStart(now);
                     //set random images
@@ -175,6 +177,7 @@ public class SlotMachineController {
         slots.setStartTime(0);
         slots.setAnimationStart(0);
         tm.handle(0);
+        //disable spin
         btnSpin.setDisable(true);
     }
 
