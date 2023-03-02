@@ -465,20 +465,6 @@ public class RouletteController {
         }
     }
 
-
-    //Check if grid cell has chip already,
-    private boolean checkIfCellHasImage(ImageView img) {
-        boolean hasImage = false;
-        if (img.getImage() == null) {
-            hasImage = false;
-            return hasImage;
-        } else if (img.getImage() != null) {
-            hasImage = true;
-            return hasImage;
-        }
-        return hasImage;
-    }
-
     //
     //This function spins the wheel
     @FXML
@@ -547,32 +533,6 @@ public class RouletteController {
 
         //after paying out, reset board
         resetChipsOnBoard();
-    }
-
-    //Gets chips value from image
-    private int getChipsValue(ImageView img) {
-        int temp = 0;
-        if (img.getImage() == chipImage[0]) {
-            temp = 1;
-        } else if (img.getImage() == chipImage[1]) {
-            temp = 5;
-        } else if (img.getImage() == chipImage[2]) {
-            temp = 10;
-        } else if (img.getImage() == chipImage[3]) {
-            temp = 20;
-        } else if (img.getImage() == chipImage[4]) {
-            temp = 50;
-        } else if (img.getImage() == chipImage[5]) {
-            temp = 100;
-        } else if (img.getImage() == chipImage[6]) {
-            temp = 500;
-        } else if (img.getImage() == chipImage[7]) {
-            temp = 1000;
-        } else if (img.getImage() == chipImage[8]) {
-            temp = 5000;
-        }
-        System.out.println(temp);
-        return temp;
     }
 
     //Pays out winnings
