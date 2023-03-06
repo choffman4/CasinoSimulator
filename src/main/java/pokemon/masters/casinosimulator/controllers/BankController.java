@@ -35,11 +35,14 @@ public class BankController {
         int bankMoney = Player.getBankMoney();
         int chipMoney = Player.getChipMoney();
 
-        bankMoney -= withDrawAmount;
-        chipMoney += withDrawAmount;
+        if (withDrawAmount <= bankMoney) {
+            bankMoney -= withDrawAmount;
+            chipMoney += withDrawAmount;
 
-        setPlayerMoney(bankMoney, chipMoney);
-        refreshText();
+            setPlayerMoney(bankMoney, chipMoney);
+            refreshText();
+        }
+
     }
 
     //Deposits money from chipMoney into players bankMoney

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -94,5 +95,18 @@
             </Text>
          </children>
       </StackPane>
+      <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="227.0" layoutY="329.0" rotate="-24.9">
+         <image>
+            <Image url="@casinoassets/OverallUI/ComingSoonStamp.png" />
+         </image>
+         <rotationAxis>
+            <Point3D z="-1.0" />
+         </rotationAxis>
+      </ImageView>
+      <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="391.0" layoutY="79.0" rotate="24.0">
+         <image>
+            <Image url="@casinoassets/OverallUI/ComingSoonStamp.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
