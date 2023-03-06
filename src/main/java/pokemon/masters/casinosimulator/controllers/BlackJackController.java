@@ -1,14 +1,17 @@
 package pokemon.masters.casinosimulator.controllers;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import pokemon.masters.casinosimulator.gamelogic.Player;
 import pokemon.masters.casinosimulator.services.ChangeScene;
 
 import java.io.*;
+import java.text.NumberFormat;
 import java.util.*;
 
 public class BlackJackController {
@@ -19,7 +22,7 @@ public class BlackJackController {
             imgStackofCards, imgCenterChip;
 
     @FXML
-    Text txtScore, txtDealerScore, txtMessage, txtDeal;
+    Text txtScore, txtDealerScore, txtMessage, txtDeal, txtMoney;
 
     @FXML
     StackPane btnBack;
@@ -43,6 +46,11 @@ public class BlackJackController {
 
     boolean playerBust;
     boolean dealerBust;
+
+    NumberFormat format = NumberFormat.getInstance(Locale.US);
+    int betValue;
+
+    List<Integer> chosenCards = new ArrayList<>();
 
     @FXML
     protected void initialize() {
@@ -79,6 +87,8 @@ public class BlackJackController {
         playerHand.clear();
         dealerHand.clear();
         imgCenterChip.setImage(null);
+        txtMoney.setText("$" + (format.format(Player.getChipMoney())));
+        chosenCards.clear();
     }
 
     //This button goes back a page to game selection
@@ -101,30 +111,47 @@ public class BlackJackController {
         if (playerHand.size() < 5 && PlayerSum(playerHand) < 21 && !gameOver && placedBet) {
             if (newGame) {
                 for (int i = 0; i < 2; i++) {
-                    int randomNum = (int) (Math.random() * 52);
-                    int cardRef = randomNum / 13;
-                    int cardValue = (randomNum - (13 * cardRef));
+                    while (true) {
+                        int randomNum = (int) (Math.random() * 52);
+                        if(!chosenCards.contains(randomNum)) {
+                            int cardRef = randomNum / 13;
+                            int cardValue = (randomNum - (13 * cardRef));
 
-                    if (i == 0) playerCard1.setImage(cardImages.get(randomNum));
-                    else playerCard2.setImage(cardImages.get(randomNum));
+                            if (i == 0) playerCard1.setImage(cardImages.get(randomNum));
+                            else playerCard2.setImage(cardImages.get(randomNum));
 
-                    playerHand.add(CalculateScore(cardValue));
+                            playerHand.add(CalculateScore(cardValue));
+                            break;
+                        }
+                    }
                 }
                 DealerTurn();
                 txtDeal.setText("Hit");
                 newGame = false;
+                Player.setChipMoney(Player.getChipMoney() - betValue);
             } else {
-                int randomNum = (int) (Math.random() * 52);
-                int cardRef = randomNum / 13;
-                int cardValue = (randomNum - (13 * cardRef));
+                while(true) {
+                    int randomNum = (int) (Math.random() * 52);
+                    if(!chosenCards.contains(randomNum)) {
+                        int cardRef = randomNum / 13;
+                        int cardValue = (randomNum - (13 * cardRef));
 
-                if (playerHand.size() == 2) playerCard3.setImage(cardImages.get(randomNum));
-                if (playerHand.size() == 3) playerCard4.setImage(cardImages.get(randomNum));
-                if (playerHand.size() == 4) playerCard5.setImage(cardImages.get(randomNum));
-                playerHand.add(CalculateScore(cardValue));
+                        if (playerHand.size() == 2) playerCard3.setImage(cardImages.get(randomNum));
+                        if (playerHand.size() == 3) playerCard4.setImage(cardImages.get(randomNum));
+                        if (playerHand.size() == 4) playerCard5.setImage(cardImages.get(randomNum));
+                        playerHand.add(CalculateScore(cardValue));
+                        break;
+                    }
+                }
             }
-            if (PlayerSum(playerHand) > 21) playerBust = true;
             txtScore.setText(String.valueOf(PlayerSum(playerHand)));
+            if (PlayerSum(playerHand) > 21) {
+                playerBust = true;
+                gameOver = true;
+                CheckWin();
+                return;
+            }
+
         }
         if (gameOver) {
             Reset();
@@ -142,35 +169,46 @@ public class BlackJackController {
     private int CalculateScore(int value) {
         if (value == 0 || value > 9) return 10;
         if (value > 0 && value < 9) return (value + 1);
-        if (value == 9) return 1;
+        if (value == 9) return 11;
         else return -1;
     }
 
     private void DealerTurn() {
         if (newGame) {
             for (int i = 0; i < 2; i++) {
-                int randomNum = (int) (Math.random() * 52);
-                int cardRef = randomNum / 13;
-                int cardValue = (randomNum - (13 * cardRef));
+                while(true) {
+                    int randomNum = (int) (Math.random() * 52);
+                    if(!chosenCards.contains(randomNum)){
+                        chosenCards.add(randomNum);
+                        int cardRef = randomNum / 13;
+                        int cardValue = (randomNum - (13 * cardRef));
 
-                if (i == 0) dealerHidden = randomNum;
-                else dealerCard2.setImage(cardImages.get(randomNum));
+                        if (i == 0) dealerHidden = randomNum;
+                        else dealerCard2.setImage(cardImages.get(randomNum));
 
-                dealerHand.add(CalculateScore(cardValue));
+                        dealerHand.add(CalculateScore(cardValue));
+                        break;
+                    }
+                }
             }
         } else {
             dealerCard1.setImage(cardImages.get(dealerHidden));
             while (PlayerSum(dealerHand) < 17) {
-                int randomNum = (int) (Math.random() * 52);
-                int cardRef = randomNum / 13;
-                int cardValue = (randomNum - (13 * cardRef));
+                while (true) {
+                    int randomNum = (int) (Math.random() * 52);
+                    if (!chosenCards.contains(randomNum)) {
+                        chosenCards.add(randomNum);
+                        int cardRef = randomNum / 13;
+                        int cardValue = (randomNum - (13 * cardRef));
 
-                if (dealerHand.size() == 2) dealerCard3.setImage(cardImages.get(randomNum));
-                if (dealerHand.size() == 3) dealerCard4.setImage(cardImages.get(randomNum));
-                if (dealerHand.size() == 4) dealerCard5.setImage(cardImages.get(randomNum));
-                dealerHand.add(CalculateScore(cardValue));
+                        if (dealerHand.size() == 2) dealerCard3.setImage(cardImages.get(randomNum));
+                        if (dealerHand.size() == 3) dealerCard4.setImage(cardImages.get(randomNum));
+                        if (dealerHand.size() == 4) dealerCard5.setImage(cardImages.get(randomNum));
+                        dealerHand.add(CalculateScore(cardValue));
+                        break;
+                    }
+                }
             }
-
         }
         if (PlayerSum(dealerHand) > 21) dealerBust = true;
     }
@@ -178,91 +216,50 @@ public class BlackJackController {
     private void CheckWin() {
         txtDealerScore.setText(String.valueOf(PlayerSum(dealerHand)));
         txtDeal.setText("Restart");
-        if (dealerBust && !playerBust) {
-            txtMessage.setText("YOU WIN!");
-        } else if (!dealerBust && playerBust) {
-            txtMessage.setText("YOU LOSE");
-        } else if (playerBust && dealerBust) {
-            txtMessage.setText("YOU TIED");
+        if (playerBust || PlayerSum(dealerHand) > PlayerSum(playerHand) && !dealerBust) {
+            txtMessage.setText("You LOSE");
+        } else if (dealerBust || PlayerSum(playerHand) > PlayerSum(dealerHand)) {
+            txtMessage.setText("YOU WIN");
+            if(playerHand.size() == 5) Player.setChipMoney(Player.getChipMoney() + (betValue * 4));
+            else if(PlayerSum(playerHand) != 21) Player.setChipMoney(Player.getChipMoney() + (betValue * 2));
+            else Player.setChipMoney(Player.getChipMoney() + (betValue * 3));
+            txtMoney.setText("$" + (format.format(Player.getChipMoney())));
         } else if (PlayerSum(playerHand) == PlayerSum(dealerHand)) {
             txtMessage.setText("YOU TIED");
-        } else if (PlayerSum(playerHand) > PlayerSum(dealerHand)) {
-            txtMessage.setText("YOU WIN!");
-        } else if (PlayerSum(playerHand) < PlayerSum(dealerHand)) {
-            txtMessage.setText("YOU LOSE");
+            Player.setChipMoney(Player.getChipMoney() + betValue);
+            txtMoney.setText("$" + (format.format(Player.getChipMoney())));
         }
     }
 
     @FXML
-    void betFifty(MouseEvent event) {
+    void bet(MouseEvent event) {
         if (newGame) {
-            imgCenterChip.setImage(chipImages.get(6));
-            placedBet = true;
+            ImageView iv = (ImageView) event.getSource();
+            String id = iv.getId();
+            int imgIndex = GetChipImages(Integer.parseInt(id));
+
+            if (Player.getChipMoney() >= Integer.parseInt(id)) {
+                betValue = Integer.parseInt(id);
+                txtMoney.setText("$" + format.format(Player.getChipMoney() - betValue));
+                imgCenterChip.setImage(chipImages.get(imgIndex));
+                placedBet = true;
+            }
         }
     }
 
-    @FXML
-    void betFive(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(5));
-            placedBet = true;
-        }
-    }
-
-    @FXML
-    void betFiveHundred(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(7));
-            placedBet = true;
-        }
-    }
-
-    @FXML
-    void betFiveThousand(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(8));
-            placedBet = true;
-        }
-    }
-
-    @FXML
-    void betOne(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(0));
-            placedBet = true;
-        }
-    }
-
-    @FXML
-    void betOneHundred(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(2));
-            placedBet = true;
-        }
-    }
-
-    @FXML
-    void betOneThousand(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(3));
-            placedBet = true;
-        }
-    }
-
-    @FXML
-    void betTen(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(1));
-            placedBet = true;
-        }
-    }
-
-    @FXML
-    void betTwenty(MouseEvent event) {
-        if (newGame) {
-            imgCenterChip.setImage(chipImages.get(4));
-            placedBet = true;
-        }
+    int GetChipImages(int chipValue) {
+        return switch (chipValue) {
+            case 1 -> 0;
+            case 5 -> 5;
+            case 10 -> 1;
+            case 20 -> 4;
+            case 50 -> 6;
+            case 100 -> 2;
+            case 500 -> 7;
+            case 1000 -> 3;
+            case 5000 -> 8;
+            default -> -1;
+        };
     }
 
     @FXML
@@ -271,7 +268,6 @@ public class BlackJackController {
     }
 
     private void GetImages() {
-
         try {
             for (File cardFile : cardFiles) {
                 if (!cardFile.toString().contains("Joker") && !cardFile.toString().contains("Back")) {

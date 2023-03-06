@@ -54,7 +54,7 @@
             <Font name="ChunkFiveEx" size="36.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="882.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$10,000">
+      <Text fx:id="txtMoney" fill="WHITE" layoutX="882.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$10,000">
          <font>
             <Font name="ChunkFiveEx" size="36.0" />
          </font>
@@ -121,47 +121,47 @@
             </Text>
          </children>
       </StackPane>
-      <ImageView fx:id="btnChip1" fitHeight="58.0" fitWidth="58.0" layoutX="213.0" layoutY="566.0" onMouseClicked="#betOne">
+      <ImageView id="1" fx:id="btnChip1" fitHeight="58.0" fitWidth="58.0" layoutX="213.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip5" fitHeight="58.0" fitWidth="58.0" layoutX="281.0" layoutY="566.0" onMouseClicked="#betFive">
+      <ImageView id="5" fx:id="btnChip5" fitHeight="58.0" fitWidth="58.0" layoutX="281.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip5.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip10" fitHeight="58.0" fitWidth="58.0" layoutX="351.0" layoutY="566.0" onMouseClicked="#betTen">
+      <ImageView id="10" fx:id="btnChip10" fitHeight="58.0" fitWidth="58.0" layoutX="351.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip10.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip20" fitHeight="58.0" fitWidth="58.0" layoutX="422.0" layoutY="566.0" onMouseClicked="#betTwenty">
+      <ImageView id="20" fx:id="btnChip20" fitHeight="58.0" fitWidth="58.0" layoutX="422.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip20.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip50" fitHeight="58.0" fitWidth="58.0" layoutX="492.0" layoutY="566.0" onMouseClicked="#betFifty">
+      <ImageView id="50" fx:id="btnChip50" fitHeight="58.0" fitWidth="58.0" layoutX="492.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip50.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip100" fitHeight="58.0" fitWidth="58.0" layoutX="562.0" layoutY="566.0" onMouseClicked="#betOneHundred">
+      <ImageView id="100" fx:id="btnChip100" fitHeight="58.0" fitWidth="58.0" layoutX="562.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip100.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip500" fitHeight="58.0" fitWidth="58.0" layoutX="630.0" layoutY="566.0" onMouseClicked="#betFiveHundred">
+      <ImageView id="500" fx:id="btnChip500" fitHeight="58.0" fitWidth="58.0" layoutX="630.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip500.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip1K" fitHeight="58.0" fitWidth="58.0" layoutX="699.0" layoutY="566.0" onMouseClicked="#betOneThousand">
+      <ImageView id="1000" fx:id="btnChip1K" fitHeight="58.0" fitWidth="58.0" layoutX="699.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip1000.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="btnChip5K" fitHeight="58.0" fitWidth="58.0" layoutX="768.0" layoutY="566.0" onMouseClicked="#betFiveThousand">
+      <ImageView id="5000" fx:id="btnChip5K" fitHeight="58.0" fitWidth="58.0" layoutX="768.0" layoutY="566.0" onMouseClicked="#bet">
          <image>
             <Image url="@casinoassets/OverallUI/Chip5000.png" />
          </image>
